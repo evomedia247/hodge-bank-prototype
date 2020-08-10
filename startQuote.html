@@ -1,0 +1,575 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    <title>BROKER PORTAL</title>
+    <link rel="stylesheet" type="text/css" href="/vendor/css/bootstrap-4.1.3/bootstrap.min.css">
+
+    <script src="/vendor/js/jquery-3.3.1/jquery-3.3.1.js"></script>
+    <script src="/js/jquery.sessionTimeout.js"></script>
+
+    <script src="/vendor/js/bootstrap-4.1.3/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="/vendor/css/font-awesome-4.7.0/font-awesome.css">
+
+
+    <script src="/vendor/js/jquery.bootstrap-responsive-tabs.min.js"></script>
+
+    <link rel="stylesheet" href="/vendor/css/bootstrap-css-tabs.css">
+
+    <!-- date picker libraries -->
+    <script src="/vendor/js/datepicker.min.js"></script>
+
+
+
+    <script src="/vendor/js/jquery-validate-1.17.0/additional-methods.js"></script>
+    <script src="/vendor/js/jquery-cookie-1.4.1/jquery.cookie.min.js"></script>
+
+
+    <script src="/vendor/js/knockout-3.4.2/knockout.min.js"></script>
+    <script src="/vendor/js/knockout-mapping-2.4.1/knockout.mapping.min.js"></script>
+    <script src="/vendor/js/jquery-mask-1.14.15/jquery.mask.js"></script>
+    <script src="/vendor/js/moment-2.22.2/moment-with-locales.js"></script>
+    <script src="/vendor/js/modernizr-2.8.3/modernizr.js"></script>
+
+
+    <!-- Tooltip -->
+    <script src="/js/tooltip.js"></script>
+
+    <!-- https://bootstrap-datepicker.readthedocs.io -->
+    <link rel="stylesheet" href="/vendor/css/datepicker.min.css">
+
+    <link rel="stylesheet" href="/css/broker-portal.css">
+
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="32x32">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="192x192">
+
+    <!-- Load Validation fetchMessageProperties into JavaScript -->
+    <script>
+        /*<![CDATA[*/
+        window.messages = {
+            "applicantDetails.age.required": "Enter a valid age.",
+            "createNewPassword.confirm.password": "Enter and confirm password.",
+            "createNewPassword.password.required": "Enter a password.",
+            "adviserSearch.company.invalid": "Enter a valid Company name.",
+            "dashboardSearch.customer.invalid": "Enter a valid Applicant name. Name can contain hyphens and apostrophes.",
+            "contact.firstName.required": "Enter a valid first name.",
+            "applicantDetails.firstName.invalid": "Enter a valid first name. View the information icon for assistance.",
+            "createPassword.invalid": "Enter a valid password.",
+            "adviserSearch.adviser.invalid": "Enter a valid Adviser name. Name can contain hyphens and apostrophes.",
+            "createMobileNumber.match": "Mobile number entries do not match.",
+            "dashboardSearch.customer.required": "Enter an Applicant name.",
+            "propertyValue.max": "Enter a valid property value.",
+            "contact.mobileNumber.required": "Enter a valid mobile number.",
+            "applicantDetails.lastName.required": "Enter applicant's last name.",
+            "brokerFee.required": "Enter an advice fee. View the information icon for assistance.",
+            "dashboardSearch.adviser.required": "Enter an Adviser name.",
+            "applicantDetails.firstName.required": "Enter applicant's first name.",
+            "specifiedTerm.number": "Enter a valid term. View the information icon for assistance.",
+            "acceptablePropertyCriteria": "Select whether the property meets Hodge`s acceptable property criteria.",
+            "createSecurity.mobileNumber.required": "Enter a mobile number.",
+            "postcode.required": "Enter the property postcode.",
+            "createUsername.username.pattern": "Enter a valid username.",
+            "loanAmount.min": "Enter a valid loan amount.",
+            "createSecurity.password.minlength": "Enter a valid password.",
+            "applicantDetails.dob.required": "Enter a valid date of birth.",
+            "contact.lastName.invalid": "Enter a valid last name.",
+            "createSecurity.mobileNumber.pattern": "Invalid mobile number: Enter a valid mobile number.",
+            "dashboardSearch.quoteReference.invalid": "Enter a Quote reference.",
+            "createPassword.match": "Password entries do not match.",
+            "createSecurity.createSecurityWord.maxlength": "Enter a valid security word.",
+            "createUsername.username.maxlength": "Enter a valid username.",
+            "contact.mobileNumber.pattern": "Invalid mobile number: Enter a valid mobile number.",
+            "postcode.UKPostcode": "Enter a valid postcode.",
+            "createSecurity.password.pattern": "Enter a valid password.",
+            "createSecurity.confirmPassword.required": "Confirm password.",
+            "contact.emailAddress.invalid": "Enter a valid email address.",
+            "confirmSecurityWord.invalid": "Enter a valid confirmation security word.",
+            "confirmMobileNumber.invalid": "Enter a valid confirmation mobile number.",
+            "createUsername.username.required": "Enter a valid username.",
+            "applicantDetails.age.out-of-range": "Age must be between %d and %d.",
+            "createSecurity.password.required": "Enter a valid password.",
+            "adviserSearch.fca.invalid": "Enter a valid FCA number. This must be 6 digits.",
+            "personalDataStatement": "We are not able to provide a quote without approval of our Personal Data Statement.",
+            "propertyValue.required": "Enter a property value.",
+            "dashboardSearch.quoteReference.required": "Enter a valid Quote reference.",
+            "propertyValue.number": "Enter a valid property value.",
+            "applicantDetails.dob.out-of-range": "Age must be between %d and %d.",
+            "loanAmount.max": "Enter a valid loan amount.",
+            "createSecurityWord.invalid": "Enter a valid security word.",
+            "applicantDetails.middleNames": "Enter a valid middle name. View the information icon for assistance.",
+            "dashboardSearch.adviser.invalid": "Enter a valid Adviser name. Name can contain hyphens and apostrophes.",
+            "createSecurity.confirmSecurityWord.required": "Confirm security word.",
+            "specifiedTerm.min": "Enter a valid term. View the information icon for assistance.",
+            "propertyValue.greaterThan": "Property value must exceed loan amount.",
+            "createSecurity.confirmPassword.equalTo": "Password entries do not match.",
+            "contact.firstName.invalid": "Enter a valid first name.",
+            "createNewPassword.password.format.invalid": "Enter a valid password.",
+            "createSecurity.createSecurityWord.required": "Enter a valid security word.",
+            "createUsername.invalid": "Enter a valid username.",
+            "createNewPassword.confirm.password.required": "Confirm password.",
+            "dashboardSearch.date.required": "Enter a valid date.",
+            "contact.lastName.required": "Enter a valid last name.",
+            "createMobileNumber.invalid": "Enter a valid mobile number.",
+            "contact.title.required": "Enter a valid title.",
+            "solicitorOption": "Select which solicitor will be used. View the information icon for assistance.",
+            "adviserSearch.company.required": "Enter a Company name.",
+            "brokerFeeType": "Select a advice fee option. View the information icon for assistance.",
+            "loanAmount.number": "Enter a valid loan amount.",
+            "createSecurity.password.maxlength": "Enter a valid password.",
+            "solicitorFee.required": "Enter a Solicitor fee or untick to use default value.",
+            "loanAmount.required": "Enter a loan amount",
+            "applicationFeeOption": "Select how the application fee is to be paid.",
+            "confirmPassword.invalid": "Enter a valid confirmation password.",
+            "solicitorFee.invalid": "Enter a valid solicitor fee.",
+            "propertyPurchased": "Select an option.View the information icon for assistance.",
+            "loanAmountType": "Select a loan amount option.",
+            "createSecurity.confirmSecurityWord.equalTo": "Security word entries do not match.",
+            "applicantDetails.gender": "Select a gender.",
+            "createNewPassword.password.mismatch": "Password entries do not match.",
+            "createSecurity.confirmMobileNumber.equalTo": "Mobile number entries do not match.",
+            "specifiedTerm.max": "Enter a valid term. View the information icon for assistance.",
+            "brokerFee.percentage": "Enter a valid advice fee percentage.",
+            "createSecurityWord.match": "Security word entries do not match.",
+            "createSecurity.createSecurityWord.pattern": "Enter a valid security word.",
+            "applicantDetails.title": "Select a title.",
+            "applicantDetails.dob.invalid": "Enter a valid date of birth.",
+            "createSecurity.createSecurityWord.minlength": "Enter a valid security word.",
+            "propertyValue.min": "Enter a valid property value.",
+            "brokerFee.number": "Enter a valid advice fee.",
+            "createUsername.username.minlength": "Enter a valid username.",
+            "createSecurity.confirmMobileNumber.required": "Confirm mobile number.",
+            "adviserSearch.adviser.required": "Enter an Adviser name.",
+            "contact.emailAddress.required": "Enter a valid email address.",
+            "applicantDetails.age.invalid": "Enter a valid age.",
+            "createUsername.taken": "This username already exists, please choose another.",
+            "dashboardSearch.date.invalid": "Enter a valid date.",
+            "applicantDetails.lastName.invalid": "Enter a valid last name. View the information icon for assistance.",
+            "adviserSearch.fca.required": "Enter a FCA number."
+        };
+        /*]]>*/
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W7Z5MW8');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-md navbar-light" style="min-height: 125px; margin-bottom: 0px">
+        <div class="container">
+            <div class="d-flex w-100">
+                <a class="logo" id="hodgeLogo" href="dashboard.html"> </a>
+                <div id="navContactDetails">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">Contact our Adviser Support team:</td>
+                            </tr>
+                            <tr>
+                                <td class="telIconNav"><span class="fa fa-phone"></span></td>
+                                <td><span class="telNoNav">0800 731 4076</span> <span class="hoursNav">Mon-Fri 9am to 5pm</span></td>
+                            </tr>
+                            <tr>
+                                <td class="emailIconNav"><span class="fa fa-envelope"></span></td>
+                                <td>
+                                    <a href="mailto:lendingsupport@hodge.co.uk">lendingsupport@hodge.co.uk</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+            </div>
+        </div>
+        <div class="navbar subnav sticky-top navbar-expand-md navbar-light">
+            <div class="container">
+                <div class="w-100">
+                    <div class="collapse navbar-collapse" id="navbarToggler">
+                        <ul id="main-nav" class="navbar-nav w-100">
+                            <li class="nav-item d-flex">
+                                <a href="dashboard.html" id="homeLink" class="align-self-center"><span class="fa fa-home"> </span> Home</a>
+                            </li>
+                            <li class="nav-item d-flex active">
+                                <a href="startQuote.html" id="newQuoteBtnHlt" class="align-self-center"><span class="fa fa-pencil"> </span> Create Quote</a>
+                            </li>
+                            <li class="nav-item dropdown d-flex">
+                                <a href="https://www.hodgeforintermediaries.co.uk/resources/" target="_blank" id="resourcesLink" class="align-self-center"><span class="fa fa-archive"> </span> Resources</a>
+                            </li>
+                            <li class="nav-item d-flex ml-md-auto">
+                                <a href="/login.html" id="logoutLink" class="align-self-center"><span class="fa fa-sign-out"> </span>
+                            Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <script>
+        // <![CDATA[
+        var homeLink = "\/advisor\/quote\/cancel";
+        var quoteLinkHlt = "\/admin\/quote\/begin-hlt-quote";
+        var quoteLinkExternal = "\/advisor\/quote\/begin";
+        var brokerLink = "\/advisor\/profile";
+        var resourcesLink = "https://www.hodgeforintermediaries.co.uk/resources/";
+        var logoutLink = "\/dashboard.html";
+        var companiesLink = "\/admin\/companies-and-contacts\/adviser-search\/";
+        var warnAfterTime = 1740000;
+        var redirAfterTime = 1800000;
+        var countdownTime = 60;
+        var keepAliveHref = "\/session\/reset";
+        var redirHref = "\/session-timed-out";
+
+        function resetResults(e) {
+            e.preventDefault();
+            window.location.href = "/dashboard.html";
+        }
+
+        // ]]>
+    </script>
+
+    <script type="text/javascript">
+        function initSessionDialog() {
+
+            $.sessionTimeout({
+                title: 'Your session is about to expire!',
+                message: 'You are about to be logged out due to inactivity. Please select the \'\Continue\'\ button to remain logged in.',
+                titleMessage: 'Warning: Time Out',
+                stayConnectedBtn: 'Continue',
+                logoutBtn: 'Logout',
+                keepAliveUrl: keepAliveHref,
+                redirUrl: redirHref,
+                logoutUrl: logoutLink,
+                warnAfter: warnAfterTime,
+                redirAfter: redirAfterTime
+            });
+
+        };
+
+        initSessionDialog();
+    </script>
+    <div class="white-container">
+        <div class="container main-page-container">
+
+            <div class="clear-fix-up-xxl"></div>
+            <div class="new-quote-container">
+
+                <div class="progressBar" id="progressBarContainer">
+                    <div id="progressBarStep1" class="progressBar__step">
+                        <div class="progressBar__step__number">
+                            <span>1</span>
+                        </div>
+                        <div class="progressBar__step__container">
+                            <div class="progressBar__step__title">Applicant details</div>
+                        </div>
+                    </div>
+                    <div id="progressBarStep2" class="progressBar__step">
+                        <div class="progressBar__step__number">
+                            <span>2</span>
+                        </div>
+                        <div class="progressBar__step__container">
+                            <div class="progressBar__step__title">Product selection</div>
+                        </div>
+                    </div>
+                    <div id="progressBarStep3" class="progressBar__step">
+                        <div class="progressBar__step__number">
+                            <span>3</span>
+                        </div>
+                        <div class="progressBar__step__container">
+                            <div class="progressBar__step__title">Property, loan & fee details</div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="form-group" id="applicantForm" action="equity-dashboard.html" autocomplete="off" novalidate><input type="hidden" name="_csrf" value="bd52927f-12ce-4ae4-b983-d14381af831e" />
+
+                    <!-- Applicant type single/joint -->
+                    <div class="box">
+                        <div class="box-content">
+
+                            <div class="form-group">
+                                <div class="w-100">
+                                    <h4 id="userMsgH4">Please complete all fields unless specified as optional</h4>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col-md-8 col-lg-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label id="applicantTypeLabel">Applicant Type</label>
+                                            </div>
+                                            <div class="col-md-4 col-xs-6">
+                                                <div class="label">
+                                                    <label id="singleApplicantLabel">
+                                                    <input class="radio" type="radio" name="applicantType" id="singleApplicant"
+                                                           value="single" style="margin-right:8px"
+                                                    /> Single applicant
+                                                </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-xs-6">
+                                                <label id="jointpplicantLabel">
+                                                <input class="radio" type="radio" name="applicantType" id="jointApplicant"
+                                                       value="joint" style="margin-right:8px" checked="checked"
+                                                />Joint applicant
+                                            </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Applicant Details 1 -->
+                    <div class="box" id="applicantOneBox">
+                        <div class="box-header">
+                            <span class="title" id="applicantOneTitle">Applicant 1</span>
+                        </div>
+                        <div class="box-content align-items-center">
+                            <div class="form-row">
+                                <div class="col-sm-6 col-md-3">
+                                    <label for="title" id="titleLabel">
+                Title
+            </label>
+                                    <select name="applicantDetails.title" class="form-control" id="title" required="required">
+                <option value="Select" disabled="disabled">Select</option>
+                <option value="Mr" selected="selected">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Ms">Ms</option>
+                <option value="Other">Other</option>
+            </select>
+
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <label for="gender" id="genderLabel">
+                Gender
+            </label>
+                                    <select class="form-control" id="gender" required name="applicantDetails.gender">
+                <option value="Select" disabled="disabled">Select</option>
+                <option value="MALE">Male</option>
+                <option value="FEMALE">Female</option>
+                <option value="UNSPECIFIED">Unspecified</option>
+            </select>
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-8 col-lg-6">
+                                    <label for="firstName" id="firstNameLabel">
+                First name
+                <span class="ao-tooltip">
+                    <img src="/images/tooltip.png" alt="tooltip"  id="firstNameTooltip" rel="tooltip" title="The field does not accept numbers. The only special characters accepted are apostrophes and hyphens."/>
+                </span>
+            </label>
+                                    <input class="form-control" id="firstName" type="text" onblur="this.value=this.value.trim()" name="applicantDetails.firstName" value="Jack" />
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-8 col-lg-6">
+                                    <label for="middleNames" id="middleNameLabel">
+                Middle name(s)
+                <span class="ao-tooltip">
+                    <img src="/images/tooltip.png" alt="tooltip" id="middleNameTooltip" rel="tooltip" title="The field does not accept numbers. The only special characters accepted are apostrophes and hyphens."/>
+                </span>
+            </label>
+                                    <input class="form-control" id="middleNames" placeholder="Optional" type="text" onblur="this.value=this.value.trim()" name="applicantDetails.middleNames" value="" />
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-8 col-lg-6">
+                                    <label for="lastName" id="lastNameLabel">
+                Last name
+                <span class="ao-tooltip">
+                    <img src="/images/tooltip.png" alt="tooltip" id="lastNameTooltip" rel="tooltip" title="The field does not accept numbers. The only special characters accepted are apostrophes and hyphens."/>
+                </span>
+            </label>
+                                    <input class="form-control" id="lastName" type="text" onblur="this.value=this.value.trim()" name="applicantDetails.lastName" value="Black" />
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-8 col-lg-6">
+                                    <label for="dob" id="dobLabel">
+                Date of Birth
+                <span class="ao-tooltip">
+                    <img src="/images/tooltip.png" alt="tooltip" id="dobTooltip" rel="tooltip" title='Provide the date of birth or age for your applicant(s). For an upcoming birthday based quote use "Or specify age".'/>
+                </span>
+            </label>
+                                    <input class="form-control" id='dob' placeholder="DD/MM/YYYY" type="text" onblur="this.value=this.value.trim()" name="applicantDetails.dob" value="" />
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-3">
+                                    <div class="well">
+                                        <div class="form-group">
+                                            <input type="checkbox" id="ageCheckbox" class="mr-2 mt-2" value="true" name="applicantDetails.manualAgeEntry" checked="checked" /><input type="hidden" name="_applicantDetails.manualAgeEntry" value="on" />
+                                            <label class="" for="age" id="ageCheckboxLabel">Or specify age</label>
+                                            <div id="applicantAge">
+                                                <!-- the onkeypress method restricts any character input except: backspace (8) and delete (0), enter (13), number keys 0-9 (48) to (57) -->
+                                                <input class="form-control" id="age" type="text" onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" onblur="this.value=this.value.trim()" name="applicantDetails.age"
+                                                    value="65" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            // <![CDATA[
+                            var applicantModel = {
+                                "title": "Mr",
+                                "firstName": "Jack",
+                                "middleNames": "",
+                                "lastName": "Black",
+                                "gender": "Female",
+                                "dob": "",
+                                "age": 65,
+                                "manualAgeEntry": true,
+                                "mainApplicant": true
+                            };
+                            // ]]>
+                        </script>
+                    </div>
+                    <!-- End Applicant Details 1 -->
+
+                    <!-- Layout with two rows -->
+
+
+                    <!-- Layout with one row -->
+                    <div id="layout-without-previous-button">
+                        <div class="row">
+                            <div class="d-flex w-100 justify-content-between clear-fix-up">
+                                <div class="col-lg-2 col-md-3 align-self-start">
+                                    <a id="cancelBtn" class="btn btn-primary btn-block" type="button" name="action" action="equity-dashboard.html" value="cancel quote" tabindex="-1">
+  Cancel
+</a>
+                                    <div class="modal fade" id="closeQuote">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Cancel Quote</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Are you sure you want to cancel this quote?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button id="dontCloseBtn" type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                                                    <button id="closeQuoteBtn" type="button" class="btn btn-primary" data-dismiss="modal">Cancel Quote</a>
+      </div>
+    </div>
+  </div>
+</div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 align-self-end">
+                                <button id="submitBtnLower" class="btn btn-default btn-block" type="submit" name="action" action="equity-dashboard.html" value="quote" tabindex="0">
+                                    Next
+                                </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                </form>
+                </div>
+
+                </div>
+
+                </div>
+
+
+                <footer>
+                    <div class="container">
+                        <div class="d-md-flex  justify-content-between bd-highlight mb-3">
+                            <div class="w-100">
+                                <p class="sub-text slate" id="disclaimerText">This site is intended for professional intermediaries only and has not been approved for use with consumers.
+                                </p>
+                                <a class="small-prints" id="cookieLink" target="_blank" href="https://www.hodgeforintermediaries.co.uk/cookie-policy/">Cookies Policy</a> | <a class="small-prints" target="_blank" id="privacyLink" href="https://www.hodgeforintermediaries.co.uk/privacy-policy/">Privacy Policy</a>
+                            </div>
+                            <div>
+
+
+                            </div>
+                        </div>
+
+
+                        <hr>
+                        <div class="row">
+                            <hr>
+                            <div class="col-md-12 mb-3">
+                                <a href="/dashboard.html" id="footerLogoLink" class="logo--white">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="small-prints" id="footerSmallPrint">Hodge is a trading name of Julian Hodge Bank Limited which is registered in England and Wales (No. 743437) and Hodge Life Assurance Company Limited which is registered in England and Wales (No. 837457). Both companies are
+                                    authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. Both companies are registered in England and Wales at One Central Square, Cardiff,
+                                    CF10 1FS.</p>
+                                <p class="small-prints">© Copyright Hodge 2018</p>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="social-icons icon-circle icon-zoom list-unstyled list-inline pull-right">
+                                    <li><a id="twitterIcon" target="_blank" href="https://twitter.com/HodgeLifetime"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a id="youTubeIcon" target="_blank" href="https://www.youtube.com/channel/UC0PN7BOjxp2Vt8wFbcoIXEA"><i class="fa fa-youtube"></i></a></li>
+                                    <li> <a id="linkedInIcon" target="_blank" href="https://www.linkedin.com/company/1074291/"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </footer>
+                <!-- Google Tag Manager (noscript) -->
+                <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7Z5MW8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+                <!-- End Google Tag Manager (noscript) -->
+
+
+                <!-- /.container -->
+
+                <script src="/js/requireForm.js"></script>
+                <script src="/js/pages/applicantDetails.js"></script>
+
+                <script>
+                    // <![CDATA[
+
+                    new ProgressBarHandler(1);
+
+                    // ]]>
+                </script>
+
+                <script src="/js/quoteCommon.js"></script>
+</body>
+
+</html>

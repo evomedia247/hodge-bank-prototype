@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    <title>BROKER PORTAL</title>
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-4.1.3/bootstrap.min.css">
+    <script src="vendor/js/jquery-3.3.1/jquery-3.3.1.js"></script>
+    <script src="js/jquery.sessionTimeout.js"></script>
+    <script src="vendor/js/bootstrap-4.1.3/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome-5.7.2/all.css">
+    <script src="vendor/js/jquery.bootstrap-responsive-tabs.min.js"></script>
+    <link rel="stylesheet" href="vendor/css/bootstrap-css-tabs.css">
+    <!-- date picker libraries -->
+    <script src="vendor/js/datepicker.min.js"></script>
+
+    <script src="vendor/js/jquery-cookie-1.4.1/jquery.cookie.min.js"></script>
+    <script src="vendor/js/knockout-3.4.2/knockout.min.js"></script>
+    <script src="vendor/js/knockout-mapping-2.4.1/knockout.mapping.min.js"></script>
+    <script src="vendor/js/jquery-mask-1.14.15/jquery.mask.js"></script>
+    <script src="vendor/js/moment-2.22.2/moment-with-locales.js"></script>
+    <script src="vendor/js/modernizr-2.8.3/modernizr.js"></script>
+    <script src="vendor/js/bootstrap-switch.js"></script>
+    <!-- Tooltip -->
+    <script src="js/tooltip.js"></script>
+    <!-- https://bootstrap-datepicker.readthedocs.io -->
+    <link rel="stylesheet" href="vendor/css/datepicker.min.css">
+    <link rel="stylesheet" href="css/broker-portal.css">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="32x32">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="192x192">
+    <link rel="stylesheet" href="css/dip_application.css">
+
+    <link rel="stylesheet" href="vendor/css/bootstrap-switch.css">
+    <!-- Load Validation fetchMessageProperties into JavaScript -->
+    <script>
+        /*<![CDATA[*/
+        window.messages = {
+            "applicantDetails.age.required": "Enter a valid age.",
+            "adviserSearch.company.invalid": "Enter a valid Company name.",
+            "dashboardSearch.customer.invalid": "Enter a valid Applicant name. Name can contain hyphens and apostrophes.",
+            "contact.firstName.required": "Enter a valid first name.",
+            "applicantDetails.firstName.invalid": "Enter a valid first name. View the information icon for assistance.",
+            "createPassword.invalid": "Enter a valid password.",
+            "adviserSearch.adviser.invalid": "Enter a valid Adviser name. Name can contain hyphens and apostrophes.",
+            "createMobileNumber.match": "Mobile number entries do not match.",
+            "dashboardSearch.customer.required": "Enter an Applicant name.",
+            "propertyValue.max": "Enter a valid property value.",
+            "contact.mobileNumber.required": "Enter a valid mobile number.",
+            "applicantDetails.lastName.required": "Enter applicant's last name.",
+            "brokerFee.required": "Enter an advice fee. View the information icon for assistance.",
+            "dashboardSearch.adviser.required": "Enter an Adviser name.",
+            "applicantDetails.firstName.required": "Enter applicant's first name.",
+            "specifiedTerm.number": "Enter a valid term. View the information icon for assistance.",
+            "acceptablePropertyCriteria": "Select whether the property meets Hodge`s acceptable property criteria.",
+            "createSecurity.mobileNumber.required": "Enter a mobile number.",
+            "postcode.required": "Enter the property postcode.",
+            "createUsername.username.pattern": "Enter a valid username.",
+            "loanAmount.min": "Enter a valid loan amount.",
+            "createSecurity.password.minlength": "Enter a valid password.",
+            "applicantDetails.dob.required": "Enter a valid date of birth.",
+            "contact.lastName.invalid": "Enter a valid last name.",
+            "createSecurity.mobileNumber.pattern": "Invalid mobile number: Enter a valid mobile number.",
+            "dashboardSearch.quoteReference.invalid": "Enter a Quote reference.",
+            "createPassword.match": "Password entries do not match.",
+            "createSecurity.createSecurityWord.maxlength": "Enter a valid security word.",
+            "createUsername.username.maxlength": "Enter a valid username.",
+            "contact.mobileNumber.pattern": "Invalid mobile number: Enter a valid mobile number.",
+            "postcode.UKPostcode": "Enter a valid postcode.",
+            "createSecurity.password.pattern": "Enter a valid password.",
+            "createSecurity.confirmPassword.required": "Confirm password.",
+            "contact.emailAddress.invalid": "Enter a valid email address.",
+            "confirmSecurityWord.invalid": "Enter a valid confirmation security word.",
+            "confirmMobileNumber.invalid": "Enter a valid confirmation mobile number.",
+            "createUsername.username.required": "Enter a valid username.",
+            "applicantDetails.age.out-of-range": "Age must be between %d and %d.",
+            "createSecurity.password.required": "Enter a valid password.",
+            "adviserSearch.fca.invalid": "Enter a valid FCA number. This must be 6 digits.",
+            "personalDataStatement": "We are not able to provide a quote without approval of our Personal Data Statement.",
+            "propertyValue.required": "Enter a property value.",
+            "dashboardSearch.quoteReference.required": "Enter a valid Quote reference.",
+            "propertyValue.number": "Enter a valid property value.",
+            "applicantDetails.dob.out-of-range": "Age must be between %d and %d.",
+            "loanAmount.max": "Enter a valid loan amount.",
+            "createSecurityWord.invalid": "Enter a valid security word.",
+            "applicantDetails.middleNames": "Enter a valid middle name. View the information icon for assistance.",
+            "dashboardSearch.adviser.invalid": "Enter a valid Adviser name. Name can contain hyphens and apostrophes.",
+            "createSecurity.confirmSecurityWord.required": "Confirm security word.",
+            "specifiedTerm.min": "Enter a valid term. View the information icon for assistance.",
+            "propertyValue.greaterThan": "Property value must exceed loan amount.",
+            "createSecurity.confirmPassword.equalTo": "Password entries do not match.",
+            "contact.firstName.invalid": "Enter a valid first name.",
+            "createSecurity.createSecurityWord.required": "Enter a valid security word.",
+            "createUsername.invalid": "Enter a valid username.",
+            "dashboardSearch.date.required": "Enter a valid date.",
+            "contact.lastName.required": "Enter a valid last name.",
+            "createMobileNumber.invalid": "Enter a valid mobile number.",
+            "contact.title.required": "Enter a valid title.",
+            "solicitorOption": "Select which solicitor will be used. View the information icon for assistance.",
+            "adviserSearch.company.required": "Enter a Company name.",
+            "brokerFeeType": "Select a advice fee option. View the information icon for assistance.",
+            "loanAmount.number": "Enter a valid loan amount.",
+            "createSecurity.password.maxlength": "Enter a valid password.",
+            "solicitorFee.required": "Enter a Solicitor fee or untick to use default value.",
+            "applicationFeeOption": "Select how the application fee is to be paid.",
+            "loanAmount.required": "Enter a loan amount",
+            "confirmPassword.invalid": "Enter a valid confirmation password.",
+            "solicitorFee.invalid": "Enter a valid solicitor fee.",
+            "propertyPurchased": "Select an option.View the information icon for assistance.",
+            "loanAmountType": "Select a loan amount option.",
+            "createSecurity.confirmSecurityWord.equalTo": "Security word entries do not match.",
+            "applicantDetails.gender": "Select a gender.",
+            "createSecurity.confirmMobileNumber.equalTo": "Mobile number entries do not match.",
+            "specifiedTerm.max": "Enter a valid term. View the information icon for assistance.",
+            "brokerFee.percentage": "Enter a valid advice fee percentage.",
+            "createSecurityWord.match": "Security word entries do not match.",
+            "createSecurity.createSecurityWord.pattern": "Enter a valid security word.",
+            "applicantDetails.title": "Select a title.",
+            "applicantDetails.dob.invalid": "Enter a valid date of birth.",
+            "createSecurity.createSecurityWord.minlength": "Enter a valid security word.",
+            "propertyValue.min": "Enter a valid property value.",
+            "brokerFee.number": "Enter a valid advice fee.",
+            "createUsername.username.minlength": "Enter a valid username.",
+            "createSecurity.confirmMobileNumber.required": "Confirm mobile number.",
+            "adviserSearch.adviser.required": "Enter an Adviser name.",
+            "contact.emailAddress.required": "Enter a valid email address.",
+            "applicantDetails.age.invalid": "Enter a valid age.",
+            "createUsername.taken": "This username already exists, please choose another.",
+            "dashboardSearch.date.invalid": "Enter a valid date.",
+            "applicantDetails.lastName.invalid": "Enter a valid last name. View the information icon for assistance.",
+            "adviserSearch.fca.required": "Enter a FCA number."
+        };
+        /*]]>*/
+    </script>
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-md navbar-light" style="min-height: 125px; margin-bottom: 0px">
+        <div class="container">
+            <div class="d-flex w-100">
+                <a class="logo" id="hodgeLogo" href="dashboard.html"> </a>
+                <div id="navContactDetails">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">Contact our Adviser Support team:</td>
+                            </tr>
+                            <tr>
+                                <td class="telIconNav"><span class="fa fa-phone"></span></td>
+                                <td><span class="telNoNav">0800 731 4076</span> <span class="hoursNav">Mon-Fri 9am to 5pm</span></td>
+                            </tr>
+                            <tr>
+                                <td class="emailIconNav"><span class="fa fa-envelope"></span></td>
+                                <td>
+                                    <a href="mailto:lendingsupport@hodge.co.uk">lendingsupport@hodge.co.uk</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+            </div>
+        </div>
+        <div class="navbar subnav sticky-top navbar-expand-md navbar-light">
+            <div class="container">
+                <div class="w-100">
+                    <div class="collapse navbar-collapse" id="navbarToggler">
+                        <ul id="main-nav" class="navbar-nav w-100">
+                            <li class="nav-item d-flex">
+                                <a href="dashboard.html" id="homeLink" class="align-self-center"><span class="fa fa-home"> </span> Home</a>
+                            </li>
+                            <li class="nav-item dropdown d-flex">
+                                <a href="https://www.hodgeforintermediaries.co.uk/resources/" target="_blank" id="resourcesLink" class="align-self-center"><span class="fa fa-archive"> </span> Resources</a>
+                            </li>
+                            <li class="nav-item d-flex"><a id="companiesAndContacts" href="/companiescontacts-advisorsearch.html" class="align-self-center"><span class="fa fa-user"></span> Companies and Contacts</a></li>
+                            <li class="nav-item d-flex ml-md-auto">
+                                <a href="/login.html" id="logoutLink" class="align-self-center"><span class="fa fa-sign-out"> </span>
+                            Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script>
+        // <![CDATA[
+        var homeLink = "\/advisor\/quote\/cancel";
+        var quoteLinkHlt = "\/admin\/quote\/begin-hlt-quote";
+        var quoteLinkExternal = "\/advisor\/quote\/begin";
+        var brokerLink = "\/advisor\/profile";
+        var resourcesLink = "https://www.hodgeforintermediaries.co.uk/resources/";
+        var logoutLink = "\/dashboard.html";
+        var companiesLink = "\/admin\/companies-and-contacts\/adviser-search\/";
+        var warnAfterTime = 1740000;
+        var redirAfterTime = 1800000;
+        var countdownTime = 60;
+        var keepAliveHref = "\/session\/reset";
+        var redirHref = "\/session-timed-out";
+
+        function resetResults(e) {
+            e.preventDefault();
+            window.location.href = "/dashboard.html";
+        }
+
+        // ]]>
+    </script>
+    <script type="text/javascript">
+        function initSessionDialog() {
+
+            $.sessionTimeout({
+                title: 'Your session is about to expire!',
+                message: 'You are about to be logged out due to inactivity. Please select the \'\Continue\'\ button to remain logged in.',
+                titleMessage: 'Warning: Time Out',
+                stayConnectedBtn: 'Continue',
+                logoutBtn: 'Logout',
+                keepAliveUrl: keepAliveHref,
+                redirUrl: redirHref,
+                logoutUrl: logoutLink,
+                warnAfter: warnAfterTime,
+                redirAfter: redirAfterTime
+            });
+
+        };
+
+        initSessionDialog();
+    </script>
+
+    <div class="white-container">
+        <div class="container main-page-container">
+            <div class="clear-fix-up-xxl"></div>
+            <div class="new-quote-container">
+                <ul class="progressBar mb-3">
+                    <li class="progress__circle--done progress--done"></li>
+                    <li class="progress__bar progress--done"></li>
+                    <li class="progress__circle--done progress--done"></li>
+                    <li class="progress__bar progress--active"></li>
+                    <li class="progress__circle progress--active"></li>
+                    <li class="progress__bar"></li>
+                    <li class="progress__circle"></li>
+                </ul>
+                <form class="form-group" id="incomeForm" action="start-app-proto-v2.html" autocomplete="off" novalidate>
+                    <input type="hidden" name="_csrf" value="7dce6706-91f2-4a9e-a667-789c68015f7c" />
+                    <!-- Applicant type single/joint -->
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <ul class="sideProgressBar">
+                                <li class="sidenav disabled" style="min-height:70px">Case Number<br><span style="font-size: 1.8em">H019185</span></li>
+                                <li class="sidenav done">Adviser declaration</li>
+                                <li class="sidenav done">Apply</li>
+                                <li class="sidenav done">Initial decision</li>
+                                <li class="sidenav active">Next steps</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <h1>Next steps</h1>
+                            <div class="form-row">
+                                <div class="box mb-1" id="applicantOneBox">
+                                    <div class="box-content align-items-center">
+                                        <div class="form-row">
+                                            <h4>Additional questions here</h4>
+                                            <hr>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="box mt-0" id="applicantOneBox">
+                                    <div class="box-content align-items-center">
+                                        <div class="form-row">
+                                            <h4>Document checklist here</h4>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Layout with two rows -->
+                    <div id="layout-with-previous-button">
+                        <div class="row">
+                            <div class="d-flex w-100 justify-content-between clear-fix-up">
+                                <div class="col-lg-2 col-md-3 align-self-start">
+                                    <a id="previousBtnInternal" class="btn btn-default btn-block" type="button" name="action" value="previous page" tabindex="-1" href="app4.html">
+                                                Previous </a>
+                                </div>
+                                <div class="col-lg-2 col-md-3 align-self-end">
+                                    <button id="submitBtnUpper" class="btn btn-default btn-block" type="submit" name="action" value="quote" tabindex="0" href="start-app-proto-v2.html.html">
+                                               Skip for now
+                                            </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex w-100 justify-content-between mt-1">
+                                <div class="col-lg-2 col-md-3 align-self-start">
+                                    <a id="cancelBtn" class="btn btn-primary btn-block" type="button" name="action" href="dashboard.html" value="cancel quote" tabindex="-1">
+                                        Cancel</a>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="closeQuote">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Cancel Quote</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to cancel this quote?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button id="dontCloseBtn" type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                                            <button id="closeQuoteBtn" type="button" class="btn btn-primary" data-dismiss="modal">Cancel Quote</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Layout with one row -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="d-md-flex justify-content-between bd-highlight mb-3">
+                <div class="w-100">
+                    <p class="sub-text slate" id="disclaimerText">This site is intended for professional intermediaries only and has not been approved for use with consumers. </p>
+                    <a class="small-prints" id="cookieLink" target="_blank" href="https://www.hodgeforintermediaries.co.uk/cookie-policy/">Cookies
+                        Policy</a> |
+                    <a class="small-prints" target="_blank" id="privacyLink" href="https://www.hodgeforintermediaries.co.uk/privacy-policy/">Privacy
+                        Policy</a>
+                </div>
+                <div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <hr>
+                <div class="col-md-12 mb-3">
+                    <a href="/dashboard.html" id="footerLogoLink" class="logo--white"> </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="small-prints" id="footerSmallPrint">Hodge is a trading name of Julian Hodge Bank Limited which is registered in England and Wales (No. 743437) and Hodge Life Assurance Company Limited which is registered in England and Wales (No. 837457). Both companies are authorised
+                        by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. Both companies are registered in England and Wales at One Central Square, Cardiff, CF10 1FS.
+                    </p>
+                    <p class="small-prints">© Copyright Hodge 2018</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="social-icons icon-circle icon-zoom list-unstyled list-inline pull-right">
+                        <li>
+                            <a id="twitterIcon" target="_blank" href="https://twitter.com/HodgeLifetime"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a id="youTubeIcon" target="_blank" href="https://www.youtube.com/channel/UC0PN7BOjxp2Vt8wFbcoIXEA"><i
+                                    class="fa fa-youtube"></i></a>
+                        </li>
+                        <li>
+                            <a id="linkedInIcon" target="_blank" href="https://www.linkedin.com/company/1074291/"><i
+                                    class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /.container -->
+    <script src="/js/requireForm.js"></script>
+</body>
+
+</html>

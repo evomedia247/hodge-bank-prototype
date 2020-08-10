@@ -1,0 +1,50 @@
+/*Tabs*/
+
+  .tabs input {
+    display: none;
+  }
+  .tabs label {
+    display: inline-block;
+    padding: 6px 0 6px 0;
+    margin: 0 -2px;
+    width: 25%; /* =100/tabs number */
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+  }
+  .tabs label:hover {
+    cursor: pointer;
+  }
+  .tabs input:checked + label {
+    border: 1px solid #dee2e6;
+    border-width: 1px 1px 0 1px;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,.05);
+    color: #223b47 !important;
+  }
+  .tabs #content1:checked ~ .content #tab1,
+  .tabs #content2:checked ~ .content #tab2,
+  .tabs #content3:checked ~ .content #tab3,
+  .tabs #content4:checked ~ .content #tab4 {
+    display: block;
+    left: -2px;
+    position: relative; 
+  }
+  .tabs .content > div {
+    display: none;
+    padding-top: 0px;
+    text-align: left;
+    /*height: 192px;*/
+    overflow: auto;
+  }
+
+  #applicantAge {
+    display:none;
+  }
+
+  #applicantOneBox > .box-content input[type="checkbox"]:checked ~ #applicantAge {
+    display: block;
+  }
+
+  #applicantTwoBox > .box-content input[type="checkbox"]:checked ~ #applicantAge {
+    display: block;
+  }

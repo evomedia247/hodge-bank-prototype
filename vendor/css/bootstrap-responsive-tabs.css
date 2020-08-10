@@ -1,0 +1,63 @@
+/*
+ * jQuery Bootstrap Responsive Tabs v2.0.1 | Valeriu Timbuc - vtimbuc.com
+ * github.com/vtimbuc/bootstrap-responsive-tabs
+ * @license WTFPL http://www.wtfpl.net/about/
+ */
+.responsive-tabs-container .tab-pane {
+  margin-bottom: 15px;
+}
+.responsive-tabs-container .accordion-link {
+  display: none;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background-color: rgba(0,0,0,.05);
+}
+
+.responsive-tabs-container li.nav-item.active {
+  background-color: rgba(0,0,0,.05) !important
+}
+
+.responsive-tabs-container .accordion-link:active {
+  background-color: rgba(0,0,0,.05);
+  color: #223b47;
+}
+
+.responsive-tabs-container .accordion-link:hover {
+  color: #223b47 !important; 
+  background-color: rgba(0,0,0,.05)
+}
+
+@media (max-width: 767px) {
+  .responsive-tabs-container.accordion-xs .nav-tabs {
+    display: none;
+  }
+  .responsive-tabs-container.accordion-xs .accordion-link {
+    display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .responsive-tabs-container.accordion-sm .nav-tabs {
+    display: none;
+  }
+  .responsive-tabs-container.accordion-sm .accordion-link {
+    display: block;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .responsive-tabs-container.accordion-md .nav-tabs {
+    display: none;
+  }
+  .responsive-tabs-container.accordion-md .accordion-link {
+    display: block;
+  }
+}
+@media (min-width: 1200px) {
+  .responsive-tabs-container.accordion-lg .nav-tabs {
+    display: none;
+  }
+  .responsive-tabs-container.accordion-lg .accordion-link {
+    display: block;
+  }
+}

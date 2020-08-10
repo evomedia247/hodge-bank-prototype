@@ -1,0 +1,510 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    <title>BROKER PORTAL</title>
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-4.1.3/bootstrap.min.css">
+    <script src="vendor/js/jquery-3.3.1/jquery-3.3.1.js"></script>
+    <script src="vendor/js/bootstrap-4.1.3/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome-5.7.2/all.css">
+    <script src="vendor/js/jquery.bootstrap-responsive-tabs.min.js"></script>
+    <link rel="stylesheet" href="vendor/css/bootstrap-css-tabs.css">
+    <!-- date picker libraries -->
+
+    <script src="vendor/js/jquery-cookie-1.4.1/jquery.cookie.min.js"></script>
+    <script src="vendor/js/knockout-3.4.2/knockout.min.js"></script>
+    <script src="vendor/js/knockout-mapping-2.4.1/knockout.mapping.min.js"></script>
+    <script src="vendor/js/jquery-mask-1.14.15/jquery.mask.js"></script>
+    <script src="vendor/js/modernizr-2.8.3/modernizr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <!-- Tooltip -->
+    <script src="js/tooltip.js"></script>
+    <!-- https://bootstrap-datepicker.readthedocs.io -->
+    <link rel="stylesheet" href="vendor/css/datepicker.min.css">
+    <link rel="stylesheet" href="css/broker-portal.css">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="32x32">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="192x192">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <!-- Load Validation fetchMessageProperties into JavaScript -->
+</head>
+
+<body class="my-login-page">
+    <div class="navbar subnav sticky-top navbar-expand-md navbar-light">
+        <div class="container">
+            <div class="w-100">
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul id="main-nav" class="navbar-nav w-100">
+                        <li class="nav-item d-flex active">
+                            <a href="dashboard.html" id="homeLink" class="align-self-center"><span class="fa fa-home"> </span> Home</a>
+                        </li>
+                        <li class="nav-item dropdown d-flex">
+                            <a href="https://www.hodgeforintermediaries.co.uk/resources/" target="_blank" id="resourcesLink" class="align-self-center"><span class="fa fa-archive"> </span> Resources</a>
+                        </li>
+                        <li class="nav-item d-flex"><a id="companiesAndContacts" href="/companiescontacts-advisorsearch.html" class="align-self-center"><span class="fa fa-user"></span> Companies and Contacts</a></li>
+                        <li class="nav-item d-flex ml-md-auto">
+                            <a href="/login.html" id="logoutLink" class="align-self-center"><span class="fa fa-sign-out"> </span>
+                                    Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="h-70">
+        <div class="container main-page-container">
+            <div class="clear-fix-up-xxl"></div>
+            <div class="quote-details">
+
+                <div class="form-row">
+                    <!-- Remove this if statement div once the argument gets passed in -->
+                    <div class="col-md-12 d-flex">
+                        <h1 id="casedetailsh1" class="mb-1">Case: <span>H019185</span></h1>
+                        <h3>
+                            <span class="badge badge-success mt-2 ml-3" style="font-size: 1em">Full Application Submitted</span>
+                        </h3>
+                        <div class="text-right ml-auto">
+                            <a onclick="overModal()" target="_self" type="application/octet-stream" class="btn btn-default mt-2 ml-1">Change case status</a>
+                        </div>
+                    </div>
+                    <!-- Sidenav -->
+                    <div class="col-md-3 pr-3" id="sidenav">
+                        <nav id="side-nav">
+                            <a href="/case/dip/case-details/view/1326" type="button">
+                                <li id="case-summary-link" class=" sidenav mb-1 done text-white" data-bind="css: { active: selectedPage() === 'SUMMARY', 'done text-white': selectedPage() != 'SUMMARY' }">
+                                    Case summary
+                                </li>
+                            </a>
+                            <a href="/case/dip/case-documents/view/1326" type="button">
+                                <li id="case-documents-link" class="sidenav mb-1 done text-white" data-bind="css: { active: selectedPage() === 'DOCUMENTS', 'done text-white': selectedPage() != 'DOCUMENTS' }">
+                                    Case documents
+                                </li>
+                            </a>
+                            <a href="/case/dip/case-messages/view/1326" type="button" class="w-100">
+                                <li id="case-messages-link" href="#" class="sidenav mb-1 done text-white" data-bind="css: { active: selectedPage() === 'MESSAGES', 'done text-white': selectedPage() != 'MESSAGES' }">
+                                    Case messages
+                                </li>
+                            </a>
+                            <a href="/mortgage-dashboard.html" id="previousBtnInternal" type="button" name="action" value="back button">
+                                <li id="case-messages-link" href="#" class="sidenav mb-1 done text-white">
+                                    Back to mortgage cases
+                                </li>
+                            </a>
+                        </nav>
+                        <!-- start of delete modal -->
+                        <div class="modal" id="reviewEditDataModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
+                            <form id="reviewEditDataForm" method="POST" action="/case/dip/edit-dip-values/1326"><input type="hidden" name="_csrf" value="02360602-89d5-4582-975f-5bbe73f87dd0">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="padding: .7rem 1rem .5rem;">
+                                            <h3 class="m-0">Editing data may invalidate your ESIS</h3>
+                                            <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body p-3" id="modal-body-review-edit-data">
+                                            <div class="w-100">
+                                                <button type="submit" style="height:80px; font-size:1.2em; cursor: pointer;" class="btn btn-default btn-block col-12">
+                                                    <span>I understand, amend data</span>
+                                                </button>
+                                                <a style="height:80px; padding-top:26px; font-size:1.2em" class="btn btn-default btn-block col-12" target="_blank" href="/advisor/document/case-document?id=10708&amp;docName=DIPData&amp;surname=Beale" onclick="hideReviewEditDataModal()">Review data</a>
+                                                <a data-dismiss="modal" style="height:40px; padding-top:6px; font-size:1.2em; cursor: pointer;" class="btn btn-default btn-block col-12">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end of delete modal -->
+                        <script>
+                            // <![CDATA[
+                            function showReviewEditDataModal() {
+                                $('#reviewEditDataModal').modal('show');
+                            };
+
+                            function hideReviewEditDataModal() {
+                                $('#reviewEditDataModal').modal('hide');
+                            };
+                            // ]]>
+                        </script>
+                    </div>
+                    <!-- main-content -->
+                    <div class="col-md-9">
+                        <div id="summaryPanel" class="fade-in">
+                            <div>
+                                <div class="card card-body mb-2" style="background-color:#ffcB05">
+                                    <h3><span class="float-left mr-auto">Case Status: </span><span class="float-right">Full Application Submitted</span></h3>
+                                    <!-- Status panel body copy -->
+                                    <p>Thanks for your application.</p>
+                                    <p>Please check that you have uploaded all of the documents required in order for your application to be assessed.</p>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <div class="card p-3 text-center mb-3 bg-light">
+                                    <h2 style="font-size: 1.6em">Case summary</h2>
+                                    <table class="table table-striped table-sm table-bordered text-left" style="table-layout: fixed">
+                                        <tbody>
+                                            <tr>
+                                                <td><span>Adviser Name</span></td>
+                                                <td>Performance Adviser 6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span>Applicant 1</span>
+                                                </td>
+                                                <td>Mark Beale</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span>Applicant 2</span>
+                                                </td>
+                                                <td>Brian Achyai</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td><span>Postcode</span></td>
+                                                <td>BN10 7LE</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span>Date created</span></td>
+                                                <td>06 Feb 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span>Date submitted</span></td>
+                                                <td>06 Feb 2020</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="d-md-flex  justify-content-between bd-highlight mb-3">
+                <div class="w-100">
+                    <p class="sub-text slate" id="disclaimerText">This site is intended for professional intermediaries only and has not been approved for use with consumers. </p>
+                    <a class="small-prints" id="cookieLink" target="_blank" href="https://www.hodgeforintermediaries.co.uk/cookie-policy/">Cookies
+                        Policy</a> |
+                    <a class="small-prints" target="_blank" id="privacyLink" href="https://www.hodgeforintermediaries.co.uk/privacy-policy/">Privacy
+                        Policy</a>
+                </div>
+                <div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <hr>
+                <div class="col-md-12 mb-3">
+                    <a href="/dashboard.html" id="footerLogoLink" class="logo--white"> </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="small-prints" id="footerSmallPrint">Hodge is a trading name of Julian Hodge Bank Limited which is registered in England and Wales (No. 743437) and Hodge Life Assurance Company Limited which is registered in England and Wales (No. 837457). Both companies are authorised
+                        by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. Both companies are registered in England and Wales at One Central Square, Cardiff, CF10 1FS.
+                    </p>
+                    <p class="small-prints">© Copyright Hodge 2018</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="small-prints" id="footerSmallPrint">Hodge is a trading name of Julian Hodge Bank Limited which is registered in England and Wales (No. 743437) and Hodge Life Assurance Company Limited which is registered in England and Wales (No. 837457). Both companies are authorised
+                            by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. Both companies are registered in England and Wales at One Central Square, Cardiff, CF10 1FS.</p>
+                        <p class="small-prints">© Copyright Hodge 2018</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="social-icons icon-circle icon-zoom list-unstyled list-inline text-right">
+                            <li><a id="twitterIcon" target="_blank" href="https://twitter.com/HodgeLifetime"><i style="font-size: 1.6em;" class="fab fa-twitter"></i></a></li>
+                            <li><a id="youTubeIcon" target="_blank" href="https://www.youtube.com/channel/UC0PN7BOjxp2Vt8wFbcoIXEA"><i style="font-size: 1.6em;" class="fab fa-youtube"></i></a></li>
+                            <li> <a id="linkedInIcon" target="_blank" href="https://www.linkedin.com/company/1074291/"><i style="font-size: 1.6em;" class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- override modal -->
+    <div class="modal" id="overrideModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="padding: .7rem 1rem .5rem;">
+                    <h3 class="m-0">Change case status</h3>
+                    <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-3" id="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Add case note and reason for change</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <label for="exampleFormControlTextarea1">Select new status</label>
+                            <select class="form-control mb-3" size="1" data-bind="options: statusList, optionsText: 'name', optionsValue: 'name', value: statusType"><option value="DIP Referred">DIP Referred</option><option value="DIP EXPIRED">DIP EXPIRED</option><option value="DIP SUBMITTED">DIP SUBMITTED</option><option value="DIP DECLINED">DIP DECLINED</option><option value="DIP ACCEPTED">DIP ACCEPTED</option><option value="APPLICATION PARTIALLY COMPLETE">APPLICATION PARTIALLY COMPLETE</option><option value="APPLICATION SUBMITTED">APPLICATION SUBMITTED</option><option value="APPLICATION UNDER REVIEW">APPLICATION UNDER REVIEW</option><option value="OFFER">OFFER</option></select>
+                            <a onclick="$('#overrideModal').modal('hide')" type="application/octet-stream" class="btn btn-default btn-block">Change status</a>
+                            <a data-dismiss="modal" aria-hidden="true" target="_self" type="application/octet-stream" class="btn btn-default btn-block">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var csrfParameterName = 'test';
+        var csrfToken = 'test';
+        var uploadEndpoint = '/test/test';
+        uploadEndpoint = uploadEndpoint.replace(/\\/, "\\\\");
+        var formUploadUrl = ko.observable();
+        var docType = ko.observable();
+        var docCategory = ko.observable();
+        var category = ko.observable();
+        var viewDocsByCategory = ko.observable();
+        var hlt = ko.observable(false);
+        var advisor = ko.observable(true);
+        var accepted = ko.observable(true);
+        var referred = ko.observable(false);
+        var fileSelected = ko.observableArray([]);
+        var statusType = ko.observable();
+        var caseDoc = ko.observable();
+        var hideProduct = ko.observable(false);
+        var selectedPage = ko.observable();
+
+        function categoryChanged() {
+            docType(null)
+        };
+
+        function showModal() {
+            $('#upload ol').empty();
+            $('#uploadModal').modal('show')
+        };
+
+        function showAppModal() {
+            $('#appModal').modal('show')
+        };
+
+        function showEditModal() {
+            $('#editModal').modal('show')
+        };
+
+        function overModal() {
+            $('#overrideModal').modal('show')
+        };
+
+        function showCaseDocModal() {
+            $('#upload ol').empty();
+            $('#uploadCaseDocModal').modal('show')
+        };
+
+        // TODO Replace these json arrays with thymeleaf ref to java list
+        var categories = [{
+            name: 'Show all',
+            id: null
+        }, {
+            name: 'Customer Due Diligence',
+            id: 'CUSTOMER_DUE_DILIGENCE'
+        }, {
+            name: 'Employment Income',
+            id: 'EMPLOYMENT_INCOME'
+        }, {
+            name: 'Self-Employment Income',
+            id: 'SELF_EMPLOYED_INCOME'
+        }, {
+            name: 'State & Pension Benefits',
+            id: 'STATE_PENSION_AND_BENEFITS'
+        }, {
+            name: 'Annuities & Pensions (in payment)',
+            id: 'ANNUITIES_AND_PENSIONS_IN_PAYMENT'
+        }, {
+            name: 'Drawdown Schemes & Unvested Pensions (not in payment)',
+            id: 'DRAWDOWN_SCHEMES_AND_UNVESTED_PENSIONS_NOT_IN_PAYMENT'
+        }, {
+            name: 'Rental Income',
+            id: 'RENTAL_INCOME'
+        }, {
+            name: 'Investment Income',
+            id: 'INVESTMENT_INCOME'
+        }, {
+            name: 'Contractors Income',
+            id: 'CONTRACTORS_INCOME'
+        }, {
+            name: 'Maintenance/Spousal Payments & Support',
+            id: 'MAINTENANCE_SPOUSAL_PAYMENTS_AND_SUPPORT'
+        }, {
+            name: 'Credit Commitments',
+            id: 'CREDIT_COMMITMENT'
+        }, {
+            name: 'Bank Statements',
+            id: 'BANK_STATEMENTS'
+        }, {
+            name: 'Deposit',
+            id: 'DEPOSIT'
+        }, {
+            name: 'Other',
+            id: 'OTHER'
+        }];
+        var dueDiligenceDocList = [{
+            name: 'Please Select',
+            id: null
+        }, {
+            name: 'Applicant 1 Proof of Identity',
+            id: 1
+        }, {
+            name: 'Applicant 2 Proof of Identity',
+            id: 2
+        }, {
+            name: 'Applicant 1 Proof of Residence',
+            id: 3
+        }, {
+            name: 'Applicant 2 Proof of Residence ',
+            id: 4
+        }];
+        var employmentDocList = [{
+            name: 'Please Select',
+            enum: null
+        }, {
+            name: 'Applicant 1 Payslip',
+            id: 1
+        }, {
+            name: 'Applicant 2 Payslip',
+            id: 2
+        }, {
+            name: 'Applicant 1 P60',
+            id: 3
+        }, {
+            name: 'Applicant 2 P60',
+            id: 4
+        }];
+        var selfEmploymentDocList = [{
+            name: 'Please Select',
+            id: null
+        }, {
+            name: 'SA302 Form',
+            id: 1,
+        }, {
+            name: 'Tax Year Overview',
+            id: 2,
+        }];
+        var statePensionDocList = [{
+            name: 'Please Select',
+            id: null
+        }, {
+            name: 'DWP Award Letter',
+            id: 1,
+        }, {
+            name: 'Bank Statement',
+            id: 2,
+        }];
+        var annuitiesDocList = [{
+            name: 'Please Select',
+            id: null
+        }, {
+            name: 'Annual Statement',
+            id: 1,
+        }, {
+            name: 'Payslip',
+            id: 2,
+        }, {
+            name: 'P60',
+            id: 3,
+        }, {
+            name: 'Level of Indexation Evidence',
+            id: 4,
+        }, {
+            name: 'Level of Spouses Benefit',
+            id: 5,
+        }];
+        var creditCommitmentsDocList = [{
+            name: 'Please Select',
+            id: null
+        }];
+        var statePensionDocList = [{
+            name: 'Please Select',
+            id: null
+        }];
+        var annuitiesDocList = [{
+            name: 'Please Select',
+            id: null
+        }];
+        var drawdownDocList = [{
+            name: 'Please Select',
+            id: null
+        }];
+        var rentalIncomeDocList = [{
+            name: 'Please Select',
+            id: null
+        }];
+        var investmentIncomeDocList = [{
+            name: 'Please Select',
+            id: null
+        }];
+        var contractorsIncomeDocList = [{
+            name: 'Please Select',
+            id: null
+        }];
+        var maintenanceDocList = [{
+            name: 'Please Select',
+            id: null
+        }];
+        var bankStatementDocList = [{
+            name: 'Please Select',
+            id: null
+        }];
+        var depositDocList = [{
+            name: 'Please Select',
+            id: null
+        }];
+        var caseDocList = [{
+            name: 'Please Select',
+            enum: null
+        }, {
+            name: 'ESIS',
+            id: 1
+        }, {
+            name: 'Application',
+            id: 2
+        }, {
+            name: 'Offer',
+            id: 3
+        }];
+        var statusList = [{
+            name: 'DIP Referred',
+        }, {
+            name: 'DIP EXPIRED',
+        }, {
+            name: 'DIP SUBMITTED',
+        }, {
+            name: 'DIP DECLINED',
+        }, {
+            name: 'DIP ACCEPTED',
+        }, {
+            name: 'APPLICATION PARTIALLY COMPLETE',
+        }, {
+            name: 'APPLICATION SUBMITTED',
+        }, {
+            name: 'APPLICATION UNDER REVIEW',
+        }, {
+            name: 'OFFER',
+        }];
+        $('.panel-collapse').on('show.bs.collapse', function() {
+            $(this).siblings('.panel-heading').addClass('active');
+        });
+
+        $('.panel-collapse').on('hide.bs.collapse', function() {
+            $(this).siblings('.panel-heading').removeClass('active');
+        });
+        ko.applyBindings();
+    </script>
+    <script>
+        $(document).ready(function() {
+            toastr.info('Underwriting prototype');
+        });
+    </script>
+</body>
+
+</html>

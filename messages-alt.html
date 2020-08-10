@@ -1,0 +1,1482 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    <title>BROKER PORTAL</title>
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-4.1.3/bootstrap.min.css">
+    <script src="vendor/js/jquery-3.3.1/jquery-3.3.1.js"></script>
+    <script src="js/jquery.sessionTimeout.js"></script>
+    <script src="vendor/js/bootstrap-4.1.3/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome-5.7.2/all.css">
+    <script src="vendor/js/jquery.bootstrap-responsive-tabs.min.js"></script>
+    <link rel="stylesheet" href="vendor/css/bootstrap-css-tabs.css">
+    <!-- date picker libraries -->
+    <script src="vendor/js/datepicker.min.js"></script>
+
+    <script src="vendor/js/jquery-cookie-1.4.1/jquery.cookie.min.js"></script>
+    <script src="vendor/js/knockout-3.4.2/knockout.min.js"></script>
+    <script src="vendor/js/knockout-mapping-2.4.1/knockout.mapping.min.js"></script>
+    <script src="vendor/js/jquery-mask-1.14.15/jquery.mask.js"></script>
+    <script src="vendor/js/modernizr-2.8.3/modernizr.js"></script>
+
+    <!-- Tooltip -->
+    <script src="js/tooltip.js"></script>
+    <!-- https://bootstrap-datepicker.readthedocs.io -->
+    <link rel="stylesheet" href="css/broker-portal.css">
+    <link rel="stylesheet" href="vendor/css/datepicker.min.css">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="32x32">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="192x192">
+    <!-- Load Validation fetchMessageProperties into JavaScript -->
+    <script>
+        /*<![CDATA[*/
+        window.messages = {
+            "applicantDetails.age.required": "Enter a valid age.",
+            "adviserSearch.company.invalid": "Enter a valid Company name.",
+            "dashboardSearch.customer.invalid": "Enter a valid Applicant name. Name can contain hyphens and apostrophes.",
+            "contact.firstName.required": "Enter a valid first name.",
+            "applicantDetails.firstName.invalid": "Enter a valid first name. View the information icon for assistance.",
+            "createPassword.invalid": "Enter a valid password.",
+            "adviserSearch.adviser.invalid": "Enter a valid Adviser name. Name can contain hyphens and apostrophes.",
+            "createMobileNumber.match": "Mobile number entries do not match.",
+            "dashboardSearch.customer.required": "Enter an Applicant name.",
+            "propertyValue.max": "Enter a valid property value.",
+            "contact.mobileNumber.required": "Enter a valid mobile number.",
+            "applicantDetails.lastName.required": "Enter applicant's last name.",
+            "brokerFee.required": "Enter an advice fee. View the information icon for assistance.",
+            "dashboardSearch.adviser.required": "Enter an Adviser name.",
+            "applicantDetails.firstName.required": "Enter applicant's first name.",
+            "specifiedTerm.number": "Enter a valid term. View the information icon for assistance.",
+            "acceptablePropertyCriteria": "Select whether the property meets Hodge`s acceptable property criteria.",
+            "createSecurity.mobileNumber.required": "Enter a mobile number.",
+            "postcode.required": "Enter the property postcode.",
+            "createUsername.username.pattern": "Enter a valid username.",
+            "loanAmount.min": "Enter a valid loan amount.",
+            "createSecurity.password.minlength": "Enter a valid password.",
+            "applicantDetails.dob.required": "Enter a valid date of birth.",
+            "contact.lastName.invalid": "Enter a valid last name.",
+            "createSecurity.mobileNumber.pattern": "Invalid mobile number: Enter a valid mobile number.",
+            "dashboardSearch.quoteReference.invalid": "Enter a Quote reference.",
+            "createPassword.match": "Password entries do not match.",
+            "createSecurity.createSecurityWord.maxlength": "Enter a valid security word.",
+            "createUsername.username.maxlength": "Enter a valid username.",
+            "contact.mobileNumber.pattern": "Invalid mobile number: Enter a valid mobile number.",
+            "postcode.UKPostcode": "Enter a valid postcode.",
+            "createSecurity.password.pattern": "Enter a valid password.",
+            "createSecurity.confirmPassword.required": "Confirm password.",
+            "contact.emailAddress.invalid": "Enter a valid email address.",
+            "confirmSecurityWord.invalid": "Enter a valid confirmation security word.",
+            "confirmMobileNumber.invalid": "Enter a valid confirmation mobile number.",
+            "createUsername.username.required": "Enter a valid username.",
+            "applicantDetails.age.out-of-range": "Age must be between %d and %d.",
+            "createSecurity.password.required": "Enter a valid password.",
+            "adviserSearch.fca.invalid": "Enter a valid FCA number. This must be 6 digits.",
+            "personalDataStatement": "We are not able to provide a quote without approval of our Personal Data Statement.",
+            "propertyValue.required": "Enter a property value.",
+            "dashboardSearch.quoteReference.required": "Enter a valid Quote reference.",
+            "propertyValue.number": "Enter a valid property value.",
+            "applicantDetails.dob.out-of-range": "Age must be between %d and %d.",
+            "loanAmount.max": "Enter a valid loan amount.",
+            "createSecurityWord.invalid": "Enter a valid security word.",
+            "applicantDetails.middleNames": "Enter a valid middle name. View the information icon for assistance.",
+            "dashboardSearch.adviser.invalid": "Enter a valid Adviser name. Name can contain hyphens and apostrophes.",
+            "createSecurity.confirmSecurityWord.required": "Confirm security word.",
+            "specifiedTerm.min": "Enter a valid term. View the information icon for assistance.",
+            "propertyValue.greaterThan": "Property value must exceed loan amount.",
+            "createSecurity.confirmPassword.equalTo": "Password entries do not match.",
+            "contact.firstName.invalid": "Enter a valid first name.",
+            "createSecurity.createSecurityWord.required": "Enter a valid security word.",
+            "createUsername.invalid": "Enter a valid username.",
+            "dashboardSearch.date.required": "Enter a valid date.",
+            "contact.lastName.required": "Enter a valid last name.",
+            "createMobileNumber.invalid": "Enter a valid mobile number.",
+            "contact.title.required": "Enter a valid title.",
+            "solicitorOption": "Select which solicitor will be used. View the information icon for assistance.",
+            "adviserSearch.company.required": "Enter a Company name.",
+            "brokerFeeType": "Select a advice fee option. View the information icon for assistance.",
+            "loanAmount.number": "Enter a valid loan amount.",
+            "createSecurity.password.maxlength": "Enter a valid password.",
+            "solicitorFee.required": "Enter a Solicitor fee or untick to use default value.",
+            "applicationFeeOption": "Select how the application fee is to be paid.",
+            "loanAmount.required": "Enter a loan amount",
+            "confirmPassword.invalid": "Enter a valid confirmation password.",
+            "solicitorFee.invalid": "Enter a valid solicitor fee.",
+            "propertyPurchased": "Select an option.View the information icon for assistance.",
+            "loanAmountType": "Select a loan amount option.",
+            "createSecurity.confirmSecurityWord.equalTo": "Security word entries do not match.",
+            "applicantDetails.gender": "Select a gender.",
+            "createSecurity.confirmMobileNumber.equalTo": "Mobile number entries do not match.",
+            "specifiedTerm.max": "Enter a valid term. View the information icon for assistance.",
+            "brokerFee.percentage": "Enter a valid advice fee percentage.",
+            "createSecurityWord.match": "Security word entries do not match.",
+            "createSecurity.createSecurityWord.pattern": "Enter a valid security word.",
+            "applicantDetails.title": "Select a title.",
+            "applicantDetails.dob.invalid": "Enter a valid date of birth.",
+            "createSecurity.createSecurityWord.minlength": "Enter a valid security word.",
+            "propertyValue.min": "Enter a valid property value.",
+            "brokerFee.number": "Enter a valid advice fee.",
+            "createUsername.username.minlength": "Enter a valid username.",
+            "createSecurity.confirmMobileNumber.required": "Confirm mobile number.",
+            "adviserSearch.adviser.required": "Enter an Adviser name.",
+            "contact.emailAddress.required": "Enter a valid email address.",
+            "applicantDetails.age.invalid": "Enter a valid age.",
+            "createUsername.taken": "This username already exists, please choose another.",
+            "dashboardSearch.date.invalid": "Enter a valid date.",
+            "applicantDetails.lastName.invalid": "Enter a valid last name. View the information icon for assistance.",
+            "adviserSearch.fca.required": "Enter a FCA number."
+        };
+        /*]]>*/
+    </script>
+    <link rel="stylesheet" href="components/pg.chocka-blocks/css/cb-style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400">
+    <link rel="stylesheet" href="css/dip_application.css">
+</head>
+
+<body class="my-login-page">
+    <nav class="navbar sticky-top navbar-expand-md navbar-light" style="min-height: 125px; margin-bottom: 0px">
+        <div class="container">
+            <div class="d-flex w-100">
+                <a class="logo" id="hodgeLogo" href="dashboard.html"> </a>
+                <div id="navContactDetails">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">Contact our Adviser Support team:</td>
+                            </tr>
+                            <tr>
+                                <td class="telIconNav"><span class="fa fa-phone"></span></td>
+                                <td><span class="telNoNav">0800 731 4076</span> <span class="hoursNav">Mon-Fri 9am
+                                            to 5pm</span></td>
+                            </tr>
+                            <tr>
+                                <td class="emailIconNav"><span class="fa fa-envelope"></span></td>
+                                <td>
+                                    <a href="mailto:lendingsupport@hodge.co.uk">lendingsupport@hodge.co.uk</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+            </div>
+        </div>
+        <div class="navbar subnav sticky-top navbar-expand-md navbar-light">
+            <div class="container">
+                <div class="w-100">
+                    <div class="collapse navbar-collapse" id="navbarToggler">
+                        <ul id="main-nav" class="navbar-nav w-100">
+                            <li class="nav-item d-flex active">
+                                <a href="dashboard.html" id="homeLink" class="align-self-center"><span class="fa fa-home"> </span> Home</a>
+                            </li>
+                            <li class="nav-item dropdown d-flex">
+                                <a href="https://www.hodgeforintermediaries.co.uk/resources/" target="_blank" id="resourcesLink" class="align-self-center"><span class="fa fa-archive"> </span> Resources</a>
+                            </li>
+                            <li class="nav-item d-flex"><a id="companiesAndContacts" href="/companiescontacts-advisorsearch.html" class="align-self-center"><span class="fa fa-user"></span> Companies and Contacts</a></li>
+                            <li class="nav-item d-flex ml-md-auto">
+                                <a href="/login.html" id="logoutLink" class="align-self-center"><span class="fa fa-sign-out"> </span>
+                                        Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="h-70">
+        <div class="white-container">
+            <div class="container main-page-container pghelper-bs4-grid-parent-relative">
+                <div class="clear-fix-up-xxl"></div>
+                <div class="quote-details">
+                    <div class="form-row">
+                        <!-- Remove this if statement div once the argument gets passed in -->
+                        <div class="col-md-12 d-flex">
+                            <h1 id="casedetailsh1" class="mb-1">Case: <span>H019185</span> </h1>
+                            <!-- ko if: override -->
+                            <h3>
+                                <span class="badge badge-success mt-2 ml-3" style="font-size: 1em">DIP Accepted</span></h3>
+                            <!-- /ko -->
+                            <!-- ko ifnot: override -->
+                            <h3><span class="badge badge-danger  mt-2 ml-3" style="font-size: 1em; background-color: #FFBF29">Referred</span></h3>
+                            <!-- /ko -->
+
+                            <div class="text-right ml-auto">
+                                <!-- ko if: advisor -->
+                                <a class="btn btn-info mt-2" style="background-color: #ebedf0" onclick="hlt(true).advisor(false)">
+                                        Switch to HLT user view
+                            </a>
+
+                                <!-- /ko -->
+                                <!-- ko if: hlt -->
+                                <a class="btn btn-info mt-2" style="background-color: #ebedf0" onclick="hlt(false).advisor(true)">
+                                        Switch to advisor view
+                            </a>
+                                <!-- ko ifnot: override -->
+                                <a onclick="overModal()" target="_self" type="application/octet-stream" class="btn btn-default mt-2 ml-1">Change case status</a>
+                                <!-- /ko -->
+                                <!-- /ko -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <!-- Sidebar -->
+                        <div class="col-md-3">
+                            <nav id="w-100">
+
+                                <ul class="list-unstyled mt-0">
+                                    <li>
+                                        <a href="start-app.html" class="btn btn-default btn-block mb-1 text-left">Case summary</a>
+                                    </li>
+                                    <li>
+                                        <a href="documents.html" class="btn btn-default btn-block mb-1 text-left">Case documents</a>
+                                    </li>
+                                    <li>
+                                        <a href="messages.html" class="btn btn-default btn-block mb-1 text-left">Messages (Chat style)</a>
+                                    </li>
+                                    <li>
+                                        <a href="messages-alt.html" class="btn btn-active btn-block mb-1 text-left">Messages (Email style)</a>
+                                    </li>
+                                    <li>
+                                        <button onclick="showEditModal()" class="btn btn-default btn-block mb-1 text-left">Review / Edit data</a>
+                                    </li>
+                                    <!-- ko if: advisor -->
+                                    <li>
+                                        <a href="advisordec1.html" class="btn btn-default btn-block text-left">Proceed to application</a>
+                                    </li>
+                                    <!-- /ko -->
+                                    <li class="mt-3">
+                                            <a href="mortgage-dashboard.html" class="btn btn-default btn-block mb-1 text-left"><i class="fa fa-arrow-left" aria-hidden="true"></i> Return to case list</a>
+                                        </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="inbox-body">
+                                                            <!-- ko if: advisor -->
+                                          <div class="d-flex w-100">
+                                                <h1>Broker Inbox</h1>
+                                                <button data-target="#SendMessage" data-toggle="modal" class="btn btn-default ml-auto">Create new message</button>
+                        </div>
+
+                        <table class="table table-inbox table-hover mt-2">
+                            <thead>
+                                <tr class="text-white" style="background-color: #223b47">
+                                    <th><span style="padding-left: 4px">Subject</span></th>
+                                    <th class="view-message text-right">Received</th>
+                                    <th width="100px"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- There is a style ready for unread messages if you add class 'unread' to tr -->
+                                <tr class="">
+                                    <td class="view-message align-middle">Surveyor booked in for thursday for RG30 2JP</td>
+                                    <td class="view-message align-middle text-right">Today at 9:27 AM</td>
+                                    <td class=""><a href="readmessage.html" class="btn btn-default btn-block">View</a></td>
+                                </tr>
+                                <tr class="">
+                                    <td class="view-message align-middle">Please provide SA302</td>
+                                    <td class="view-message align-middle text-right">Yesterday at 9:27 AM</td>
+                                    <td class=""><a href="readmessage.html" class="btn btn-default btn-block">View</a></td>
+                                </tr>
+                                <tr class="">
+                                    <td class="view-message align-middle">Lorem ipsum dolor sit amet. </td>
+                                    <td class="view-message align-middle text-right">30/10/2019</td>
+                                    <td class=""><a href="readmessage.html" class="btn btn-default btn-block">View</a></td>
+                                </tr>
+                                <tr class="">
+                                    <td class="view-message align-middle">Duis bibendum dolor nisl. Duis.</td>
+                                    <td class="view-message align-middle text-right">30/10/2019</td>
+                                    <td class=""><a href="readmessage.html" class="btn btn-default btn-block">View</a></td>
+                                </tr>
+                                <tr class="">
+                                    <td class="view-message align-middle">Phasellus pulvinar bibendum dolor, nec. </td>
+                                    <td class="view-message align-middle text-right">28/10/2019</td>
+                                    <td class=""><a href="readmessage.html" class="btn btn-default btn-block">View</a></td>
+                                </tr>
+                                <tr class="">
+                                    <td class="view-message align-middle">Morbi euismod urna vel nisi.</td>
+                                    <td class="view-message align-middle text-right">28/10/2019</td>
+                                    <td class=""><a href="readmessage.html" class="btn btn-default btn-block">View</a></td>
+                                </tr>
+                                <tr class="">
+                                    <td class="view-message align-middle">Duis et est vestibulum justo.</td>
+                                    <td class="view-message align-middle text-right">21/10/2019</td>
+                                    <td class=""><a href="readmessage.html" class="btn btn-default btn-block">View</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- /ko -->
+                        <!-- ko if: hlt -->
+                        <div class="d-flex w-100">
+                            <h1>Hodge Inbox</h1>
+                            <button data-target="#SendMessage" data-toggle="modal" class="btn btn-default ml-auto">Create new message</button>
+                        </div>
+                        <table class="table table-inbox table-hover mt-2">
+                            <thead>
+                                <tr class="text-white" style="background-color: #223b47">
+                                    <th><span style="padding-left: 4px">Subject</span></th>
+                                    <th class="view-message text-right">Received</th>
+                                    <th width="100px"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- There is a style ready for unread messages if you add class 'unread' to tr -->
+                                <tr class="">
+                                    <td class="view-message align-middle">Can you reduce the loan amount on this?</td>
+                                    <td class="view-message align-middle text-right">Today at 9:27 AM</td>
+                                    <td class=""><a href="readmessage.html" class="btn btn-default btn-block">View</a></td>
+                                </tr>
+                                <tr class="">
+                                    <td class="view-message align-middle">Whats the status of the underwriting?</td>
+                                    <td class="view-message align-middle text-right">Yesterday at 9:27 AM</td>
+                                    <td class=""><a href="readmessage.html" class="btn btn-default btn-block">View</a></td>
+                                </tr>
+                                <tr class="">
+                                    <td class="view-message align-middle">Is there a copy of your privacy policy I can download</td>
+                                    <td class="view-message align-middle text-right">30/10/2019</td>
+                                    <td class=""><a href="readmessage.html" class="btn btn-default btn-block">View</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- /ko -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <footer>
+            <div class="container pghelper-bs4-grid-parent-relative">
+                <div class="d-md-flex justify-content-between bd-highlight mb-3">
+                    <div class="w-100">
+                        <p class="sub-text slate" id="disclaimerText">This site is intended for professional intermediaries only and has not been approved for use with consumers. </p>
+                        <a class="small-prints" id="cookieLink" target="_blank" href="https://www.hodgeforintermediaries.co.uk/cookie-policy/">Cookies
+                                    Policy</a> |
+                        <a class="small-prints" target="_blank" id="privacyLink" href="https://www.hodgeforintermediaries.co.uk/privacy-policy/">Privacy
+                                    Policy</a>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <hr>
+                    <div class="col-md-12 mb-3">
+                        <a href="/dashboard.html" id="footerLogoLink" class="logo--white"> </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="small-prints" id="footerSmallPrint">Hodge is a trading name of Julian Hodge Bank Limited which is registered in England and Wales (No. 743437) and Hodge Life Assurance Company Limited which is registered in England and Wales (No. 837457). Both companies are authorised
+                            by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. Both companies are registered in England and Wales at One Central Square, Cardiff, CF10 1FS.</p>
+                        <p class="small-prints">© Copyright Hodge 2018</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="social-icons icon-circle icon-zoom list-unstyled list-inline pull-right">
+                            <li>
+                                <a id="twitterIcon" target="_blank" href="https://twitter.com/HodgeLifetime"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a id="youTubeIcon" target="_blank" href="https://www.youtube.com/channel/UC0PN7BOjxp2Vt8wFbcoIXEA"><i class="fa fa-youtube"></i></a>
+                            </li>
+                            <li>
+                                <a id="linkedInIcon" target="_blank" href="https://www.linkedin.com/company/1074291/"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Create message modal -->
+    <div class="modal" id="SendMessage" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create new message for H019185
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body p-2">
+                        <input type="text" class="form-control" name="" id="" placeholder="Type subject here">
+                        <textarea class="form-control" id="messsageTextBox" rows="7" placeholder="Type message here"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary mr-auto">Cancel</button>
+                    <button type="button" class="btn btn-secondary ml-auto" data-dismiss="modal">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- accordion -->
+    <style>
+        .nav-tabs .nav-item.show .nav-link,
+        .nav-tabs .nav-link.active {
+            color: #495057;
+            background-color: #ebedf0;
+            text-decoration: none;
+            outline: 0;
+        }
+        
+        .checklist-title:hover {
+            color: #495057;
+        }
+        
+        .btn-active {
+            background-color: #ffcB05;
+            color: #223b47;
+        }
+        
+        .btn-active:hover {
+            color: #223b47;
+        }
+        
+        .btn-apply {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .bg-none {
+            background-color: none !important
+        }
+        
+        h4.panel-title {
+            margin: 0;
+            padding-bottom: 6px
+        }
+        
+        h4.panel-title &:hover {
+            color: orange
+        }
+        
+        a.btn.btn-default.btn-block {
+            color: white !important;
+        }
+        
+        a.btn.btn-default.btn-block:hover {
+            color: #223b47 !important;
+        }
+        
+        .panel-heading {
+            padding: 0 8px;
+            border: 0;
+            padding-top: 5px;
+            background-color: #ebedf0
+        }
+        
+        .panel.panel-default {
+            border-top: 1px solid #ebedf0;
+        }
+        
+        .active-row {
+            background-image: linear-gradient(45deg, #ffcb05 16.67%, #ffea9b 16.67%, #ffea9b 50%, #ffcb05 50%, #ffcb05 66.67%, #ffea9b 66.67%, #ffea9b 100%);
+            background-size: 4.24px 4.24px;
+        }
+        
+        .panel-title>a,
+        .panel-title>a:active {
+            display: block;
+            padding: 3px;
+            text-decoration: none;
+            font-family: Aleo;
+            font-size: .9em
+        }
+        
+        .panel-heading a:before {
+            font-family: 'FontAwesome';
+            content: "\f063";
+            float: right;
+            transition: all 0.5s;
+        }
+        
+        .panel-body {
+            background-color: #f8f9fa!important;
+        }
+        
+        .panel-heading.active a:before {
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+        
+        .card {
+            border: none !important
+        }
+        
+        select.form-control[multiple],
+        select.form-control[size] {
+            height: 34px;
+        }
+        
+        .table-warning,
+        .table-warning>td,
+        .table-warning>th {
+            background-color: #ffcB05;
+        }
+        
+        input.fileChooser,
+        .pg-node-id-1,
+        .pg-file-cs-170 {
+            padding: 4px 0 16px;
+            font-size: 1em;
+            font-family: "Hodge-Lato", sans-serif;
+            display: block;
+        }
+        
+        .cb-content9 .content.one,
+        .pg-node-id-1360 {
+            background-color: #fbfbfb;
+            background-color: #fbfbfb;
+            border: solid 1px #f2f2f2;
+        }
+        
+        #uploadModal {
+            min-width: 700px;
+        }
+        
+        #abc.custom-file-label {
+            height: 40px;
+            padding-top: 8px !important;
+            padding-bottom: 0;
+        }
+        
+        #abc.custom-file-label::after {
+            height: 38px;
+            padding-top: 8px !important;
+            padding-bottom: 0;
+            background-color: #223b47;
+            color: white
+        }
+        
+        .upload-file .start {
+            display: none;
+        }
+        
+        ol.upload-files-list {
+            /*border: 1px solid #b9b9b9;*/
+            margin: 0;
+            padding: 0 10px 10px 10px;
+            border-left: none;
+            border-right: none;
+            overflow: hidden;
+        }
+        
+        ol.upload-files-list .upload-file:last-child {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        ol.upload-files-list .upload-file.template-download .error-col {
+            float: right;
+        }
+        
+        ol.upload-files-list .upload-file.template-upload .error-col {
+            float: left;
+        }
+        
+        ol.upload-files-list .upload-file.template-upload .filesize-col {
+            float: left;
+            padding-right: 5px;
+            padding-left: 5px;
+            width: 80px;
+        }
+        
+        ol.upload-files-list .upload-file {
+            list-style: none;
+            position: relative;
+            margin: 0;
+            height: 35px;
+            line-height: 35px;
+            border-top: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            vertical-align: bottom;
+        }
+        
+        ol.upload-files-list .upload-file .upload-file-info {
+            vertical-align: baseline;
+            border-collapse: collapse;
+            /*width: 100%;*/
+            height: 35px;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            right: 10px;
+        }
+        
+        ol.upload-files-list .upload-file .upload-progress-bar {
+            height: 33px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .upload-file.complete .upload-progress-bar {
+            background-color: #ebffd9;
+        }
+        
+        .upload-file.error .upload-progress-bar {
+            background-color: #FD9F9F;
+        }
+        
+        .upload-file .upload-progress-bar {
+            border-radius: 0;
+            background-color: #e9f4ff;
+        }
+        
+        .upload-files-list .upload-file .upload-file-info .filename-col {
+            float: left;
+            width: 310px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .upload-files-list .upload-file .upload-file-info div {
+            display: block;
+        }
+        
+        .upload-files-list .upload-file .upload-file-info .status-col {
+            float: right;
+        }
+        
+        .upload-files-list .upload-file .upload-file-info .actions-col {
+            float: right;
+        }
+        
+        .field-validation-error {
+            color: red;
+        }
+        
+        .fileupload-buttonbar {
+            padding: 10px 0 0;
+        }
+        
+        .modal-content {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        
+        .modal-body {
+            padding: 0;
+        }
+        
+        .modal-content,
+        .btn {
+            border-radius: 0;
+        }
+        
+        .modal-backdrop {
+            background-color: #fff;
+        }
+        
+        .modal-footer {
+            margin-top: 0 !important;
+        }
+        
+        .modal-vertical-centered {
+            transform: translate(0, 50%) !important;
+            -ms-transform: translate(0, 50%) !important;
+            /* IE 9 */
+            -webkit-transform: translate(0, 50%) !important;
+            /* Safari and Chrome */
+        }
+        
+        .messagetxt {
+            font-family: "Hodge-Aleo", "Times", "Times New Roman", serif;
+            font-size: 14px !important;
+        }
+        
+        #upload {
+            font-family: 'Aleo', sans-serif;
+            /*background-color: #373a3d;
+background-image: -webkit-linear-gradient(top, #373a3d, #313437);
+background-image: -moz-linear-gradient(top, #373a3d, #313437);
+background-image: linear-gradient(top, #373a3d, #313437);
+/*width: 250px;*/
+            /*padding: 30px;*/
+            /*border-radius: 3px;*/
+            /*margin: 200px auto 100px;*/
+            /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
+            */
+        }
+        
+        #drop {
+            /*background-color: #2E3134;*/
+            padding: 10px 10px 0px 10px;
+            /*margin-bottom: 30px;*/
+            /*border: 20px solid rgba(0, 0, 0, 0);*/
+            /*border-radius: 3px;*/
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: bold;
+            color: #7f858a;
+        }
+        
+        #drop a {
+            background-color: #007a96;
+            padding: 12px 26px;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 2px;
+            cursor: pointer;
+            display: block;
+            /*margin-top: 12px;*/
+            line-height: 1;
+        }
+        
+        #drop a:hover {
+            background-color: #0986a3;
+        }
+        
+        #drop input {
+            display: none;
+        }
+        
+        .modal {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .card {
+            border: none !important
+        }
+        
+        .card-body {
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            padding: 0
+        }
+        
+        .nav-tabs .nav-item {
+            background-color: #f8f9fa!important;
+        }
+        
+        a.nav-link.active {
+            background-color: #ebedf0
+        }
+        
+        .bg-active {
+            background-color: #ebedf0
+        }
+        
+        .nav-tabs-navigation {
+            margin-bottom: -2px;
+        }
+        
+        .inbox_people {
+            background: #f8f8f8 none repeat scroll 0 0;
+            float: left;
+            overflow: hidden;
+            width: 40%;
+            border-right: 1px solid #c4c4c4;
+        }
+        
+        .inbox_msg {
+            border: 1px solid #c4c4c4;
+            clear: both;
+            overflow: hidden;
+        }
+        
+        .top_spac {
+            margin: 20px 0 0;
+        }
+        
+        .recent_heading {
+            float: left;
+            width: 40%;
+        }
+        
+        .srch_bar {
+            display: inline-block;
+            text-align: right;
+            width: 60%;
+            padding:
+        }
+        
+        .headind_srch {
+            padding: 10px 29px 10px 20px;
+            overflow: hidden;
+            border-bottom: 1px solid #c4c4c4;
+        }
+        
+        .recent_heading h4 {
+            color: #05728f;
+            font-size: 21px;
+            margin: auto;
+        }
+        
+        .srch_bar input {
+            border: 1px solid #cdcdcd;
+            border-width: 0 0 1px 0;
+            width: 80%;
+            padding: 2px 0 4px 6px;
+            background: none;
+        }
+        
+        .srch_bar .input-group-addon button {
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+            border: medium none;
+            padding: 0;
+            color: #707070;
+            font-size: 18px;
+        }
+        
+        .srch_bar .input-group-addon {
+            margin: 0 0 0 -27px;
+        }
+        
+        .chat_ib h5 {
+            font-size: 15px;
+            color: #464646;
+            margin: 0 0 8px 0;
+        }
+        
+        .chat_ib h5 span {
+            font-size: 13px;
+            float: right;
+        }
+        
+        .chat_ib p {
+            font-size: 14px;
+            color: #989898;
+            margin: auto
+        }
+        
+        .chat_img {
+            float: left;
+            width: 11%;
+        }
+        
+        .chat_ib {
+            float: left;
+            padding: 0 0 0 15px;
+            width: 88%;
+        }
+        
+        .chat_people {
+            overflow: hidden;
+            clear: both;
+        }
+        
+        .chat_list {
+            border-bottom: 1px solid #c4c4c4;
+            margin: 0;
+            padding: 18px 16px 10px;
+        }
+        
+        .inbox_chat {
+            height: 550px;
+            overflow-y: scroll;
+        }
+        
+        .active_chat {
+            background: #ebebeb;
+        }
+        
+        .incoming_msg_img {
+            display: inline-block;
+            width: 6%;
+        }
+        
+        .received_msg {
+            display: inline-block;
+            padding: 0 0 0 10px;
+            vertical-align: top;
+            width: 92%;
+        }
+        
+        .received_withd_msg p {
+            background: #ffcB05 none repeat scroll 0 0;
+            border-radius: 3px;
+            color: #223b47 !important;
+            font-size: 14px;
+            margin: 0;
+            padding: 8px 10px 8px 12px;
+            width: 100%;
+        }
+        
+        .time_date {
+            color: #747474;
+            display: block;
+            font-size: 12px;
+            margin: 8px 0 8px;
+        }
+        
+        .received_withd_msg {
+            width: 66%;
+        }
+        
+        .mesgs {
+            float: left;
+            width: 60%;
+            background: #f6f6f6;
+            margin-bottom: 24px;
+        }
+        
+        .sent_msg p {
+            background: #223b47 none repeat scroll 0 0;
+            border-radius: 3px;
+            font-size: 14px;
+            margin: 0;
+            color: #fff;
+            padding: 8px 10px 8px 12px;
+            width: 100%;
+        }
+        
+        .outgoing_msg {
+            overflow: hidden;
+            margin: 26px 0 26px;
+        }
+        
+        .sent_msg {
+            float: right;
+            width: 66%;
+        }
+        
+        .input_msg_write input {
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+            border: medium none;
+            color: #4c4c4c;
+            font-size: 15px;
+            min-height: 48px;
+            width: 100%;
+        }
+        
+        .type_msg {
+            border-top: 1px solid #c4c4c4;
+            position: relative;
+        }
+        
+        .msg_send_btn {
+            background: #05728f none repeat scroll 0 0;
+            border: medium none;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            font-size: 17px;
+            height: 33px;
+            position: absolute;
+            right: 0;
+            top: 11px;
+            width: 33px;
+        }
+        
+        .messaging {
+            padding: 0 0 50px 0;
+        }
+        
+        .msg_history {
+            overflow-y: auto;
+            font-family: "Hodge-Aleo", "Times", "Times New Roman", serif;
+            padding: 34px 16px 34px 8px;
+            min-height: 516px;
+        }
+        
+        #messsageTextBox {
+            font-family: "Hodge-Aleo", "Times", "Times New Roman", serif;
+            font-size: 2em
+        }
+        
+        .mail-box {
+            border-collapse: collapse;
+            border-spacing: 0;
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+        }
+        
+        .mail-box aside {
+            display: table-cell;
+            float: none;
+            height: 100%;
+            padding: 0;
+            vertical-align: top;
+        }
+        
+        .mail-box .sm-side {
+            background: none repeat scroll 0 0 #e5e8ef;
+            border-radius: 4px 0 0 4px;
+            width: 25%;
+        }
+        
+        .mail-box .lg-side {
+            background: none repeat scroll 0 0 #fff;
+            border-radius: 0 4px 4px 0;
+            width: 75%;
+        }
+        
+        .mail-box .sm-side .user-head {
+            background: none repeat scroll 0 0 #00a8b3;
+            border-radius: 4px 0 0;
+            color: #fff;
+            min-height: 80px;
+            padding: 10px;
+        }
+        
+        .user-head .inbox-avatar {
+            float: left;
+            width: 65px;
+        }
+        
+        .user-head .inbox-avatar img {
+            border-radius: 4px;
+        }
+        
+        .user-head .user-name {
+            display: inline-block;
+            margin: 0 0 0 10px;
+        }
+        
+        .user-head .user-name h5 {
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 0;
+            margin-top: 15px;
+        }
+        
+        .user-head .user-name h5 a {
+            color: #fff;
+        }
+        
+        .user-head .user-name span a {
+            color: #87e2e7;
+            font-size: 12px;
+        }
+        
+        a.mail-dropdown {
+            background: none repeat scroll 0 0 #80d3d9;
+            border-radius: 2px;
+            color: #01a7b3;
+            font-size: 10px;
+            margin-top: 20px;
+            padding: 3px 5px;
+        }
+        
+        .btn-compose {
+            background: none repeat scroll 0 0 #ff6c60;
+            color: #fff;
+            padding: 12px 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .btn-compose:hover {
+            background: none repeat scroll 0 0 #f5675c;
+            color: #fff;
+        }
+        
+        ul.inbox-nav {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        
+        .inbox-divider {
+            border-bottom: 1px solid #d5d8df;
+        }
+        
+        ul.inbox-nav li {
+            display: inline-block;
+            line-height: 45px;
+            width: 100%;
+        }
+        
+        ul.inbox-nav li a {
+            color: #6a6a6a;
+            display: inline-block;
+            line-height: 45px;
+            padding: 0 20px;
+            width: 100%;
+        }
+        
+        ul.inbox-nav li a:hover,
+        ul.inbox-nav li.active a,
+        ul.inbox-nav li a:focus {
+            background: none repeat scroll 0 0 #d5d7de;
+            color: #6a6a6a;
+        }
+        
+        ul.inbox-nav li a i {
+            color: #6a6a6a;
+            font-size: 16px;
+            padding-right: 10px;
+        }
+        
+        ul.inbox-nav li a span.label {
+            margin-top: 13px;
+        }
+        
+        ul.labels-info li h4 {
+            color: #5c5c5e;
+            font-size: 13px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 5px;
+            text-transform: uppercase;
+        }
+        
+        ul.labels-info li {
+            margin: 0;
+        }
+        
+        ul.labels-info li a {
+            border-radius: 0;
+            color: #6a6a6a;
+        }
+        
+        ul.labels-info li a:hover,
+        ul.labels-info li a:focus {
+            background: none repeat scroll 0 0 #d5d7de;
+            color: #6a6a6a;
+        }
+        
+        ul.labels-info li a i {
+            padding-right: 10px;
+        }
+        
+        .nav.nav-pills.nav-stacked.labels-info p {
+            color: #9d9f9e;
+            font-size: 11px;
+            margin-bottom: 0;
+            padding: 0 22px;
+        }
+        
+        .inbox-head {
+            background: none repeat scroll 0 0 #41cac0;
+            border-radius: 0 4px 0 0;
+            color: #fff;
+            min-height: 80px;
+            padding: 20px;
+        }
+        
+        .inbox-head h3 {
+            display: inline-block;
+            font-weight: 300;
+            margin: 0;
+            padding-top: 6px;
+        }
+        
+        .inbox-head .sr-input {
+            border: medium none;
+            border-radius: 4px 0 0 4px;
+            box-shadow: none;
+            color: #8a8a8a;
+            float: left;
+            height: 40px;
+            padding: 0 10px;
+        }
+        
+        .inbox-head .sr-btn {
+            background: none repeat scroll 0 0 #00a6b2;
+            border: medium none;
+            border-radius: 0 4px 4px 0;
+            color: #fff;
+            height: 40px;
+            padding: 0 20px;
+        }
+        
+        .table-inbox {
+            border: 1px solid #d3d3d3;
+            margin-bottom: 0;
+        }
+        
+        .table-inbox tr td {
+            padding: 12px !important;
+        }
+        
+        .table-inbox tr td:hover {
+            cursor: pointer;
+        }
+        
+        .table-inbox tr td .fa-star.inbox-started,
+        .table-inbox tr td .fa-star:hover {
+            color: #f78a09;
+        }
+        
+        .table-inbox tr td .fa-star {
+            color: #d5d5d5;
+        }
+        
+        .table-inbox tr.unread td {
+            background: none repeat scroll 0 0 #f7f7f7;
+            font-weight: 600;
+        }
+        
+        ul.inbox-pagination {
+            float: right;
+        }
+        
+        ul.inbox-pagination li {
+            float: left;
+        }
+        
+        .mail-option {
+            display: inline-block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        
+        .mail-option .chk-all,
+        .mail-option .btn-group {
+            margin-right: 5px;
+        }
+        
+        .mail-option .chk-all,
+        .mail-option .btn-group a.btn {
+            background: none repeat scroll 0 0 #fcfcfc;
+            border: 1px solid #e7e7e7;
+            border-radius: 3px !important;
+            color: #afafaf;
+            display: inline-block;
+            padding: 5px 10px;
+        }
+        
+        .inbox-pagination a.np-btn {
+            background: none repeat scroll 0 0 #fcfcfc;
+            border: 1px solid #e7e7e7;
+            border-radius: 3px !important;
+            color: #afafaf;
+            display: inline-block;
+            padding: 5px 15px;
+        }
+        
+        .mail-option .chk-all input[type="checkbox"] {
+            margin-top: 0;
+        }
+        
+        .mail-option .btn-group a.all {
+            border: medium none;
+            padding: 0;
+        }
+        
+        .inbox-pagination a.np-btn {
+            margin-left: 5px;
+        }
+        
+        .inbox-pagination li span {
+            display: inline-block;
+            margin-right: 5px;
+            margin-top: 7px;
+        }
+        
+        .fileinput-button {
+            background: none repeat scroll 0 0 #eeeeee;
+            border: 1px solid #e6e6e6;
+        }
+        
+        .inbox-body .modal .modal-body input,
+        .inbox-body .modal .modal-body textarea {
+            border: 1px solid #e6e6e6;
+            box-shadow: none;
+        }
+        
+        .btn-send,
+        .btn-send:hover {
+            background: none repeat scroll 0 0 #00a8b3;
+            color: #fff;
+        }
+        
+        .btn-send:hover {
+            background: none repeat scroll 0 0 #009da7;
+        }
+        
+        .modal-header h4.modal-title {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 300;
+        }
+        
+        .modal-body label {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+        }
+        
+        .heading-inbox h4 {
+            border-bottom: 1px solid #ddd;
+            color: #444;
+            font-size: 18px;
+            margin-top: 20px;
+            padding-bottom: 10px;
+        }
+        
+        .sender-info {
+            margin-bottom: 20px;
+        }
+        
+        .sender-info img {
+            height: 30px;
+            width: 30px;
+        }
+        
+        .sender-dropdown {
+            background: none repeat scroll 0 0 #eaeaea;
+            color: #777;
+            font-size: 10px;
+            padding: 0 3px;
+        }
+        
+        .view-mail a {
+            color: #ff6c60;
+        }
+        
+        .attachment-mail {
+            margin-top: 30px;
+        }
+        
+        .attachment-mail ul {
+            display: inline-block;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        
+        .attachment-mail ul li {
+            float: left;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            width: 150px;
+        }
+        
+        .attachment-mail ul li img {
+            width: 100%;
+        }
+        
+        .attachment-mail ul li span {
+            float: right;
+        }
+        
+        .attachment-mail .file-name {
+            float: left;
+        }
+        
+        .attachment-mail .links {
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .fileinput-button {
+            float: left;
+            margin-right: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .fileinput-button input {
+            cursor: pointer;
+            direction: ltr;
+            font-size: 23px;
+            margin: 0;
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translate(-300px, 0px) scale(4);
+        }
+        
+        .fileupload-buttonbar .btn,
+        .fileupload-buttonbar .toggle {
+            margin-bottom: 5px;
+        }
+        
+        .files .progress {
+            width: 200px;
+        }
+        
+        .fileupload-processing .fileupload-loading {
+            display: block;
+        }
+        
+        * html .fileinput-button {
+            line-height: 24px;
+            margin: 1px -3px 0 0;
+        }
+        
+        *+html .fileinput-button {
+            margin: 1px 0 0;
+            padding: 2px 15px;
+        }
+        
+        @media (max-width: 767px) {
+            .files .btn span {
+                display: none;
+            }
+            .files .preview * {
+                width: 40px;
+            }
+            .files .name * {
+                display: inline-block;
+                width: 80px;
+                word-wrap: break-word;
+            }
+            .files .progress {
+                width: 20px;
+            }
+            .files .delete {
+                width: 60px;
+            }
+        }
+    </style>
+    <script>
+        var csrfParameterName = 'test';
+        var csrfToken = 'test';
+        var uploadEndpoint = '/test/test';
+        uploadEndpoint = uploadEndpoint.replace(/\\/, "\\\\");
+        var formUploadUrl = ko.observable();
+        var docType = ko.observable();
+        var docCategory = ko.observable();
+        var category = ko.observable();
+        var viewDocsByCategory = ko.observable();
+        var hlt = ko.observable(false);
+        var advisor = ko.observable(true);
+        var override = ko.observable(true);
+
+        function categoryChanged() {
+            docType(null)
+        };
+
+        function showModal() {
+            $('#upload ol').empty();
+            $('#uploadModal').modal('show')
+        };
+
+        function showCaseDocModal() {
+            $('#upload ol').empty();
+            $('#uploadCaseDocModal').modal('show')
+        };
+
+        function showAppModal() {
+            $('#appModal').modal('show')
+        };
+
+        function showEditModal() {
+            $('#editModal').modal('show')
+        };
+
+        function showDeleteModal() {
+            $('#deleteModal').modal('show')
+        };
+
+        function overModal() {
+            $('#overrideModal').modal('show')
+        };
+
+        $('.panel-collapse').on('show.bs.collapse', function() {
+            $(this).siblings('.panel-heading').addClass('active');
+        });
+
+        $('.panel-collapse').on('hide.bs.collapse', function() {
+            $(this).siblings('.panel-heading').removeClass('active');
+        });
+        ko.applyBindings();
+    </script>
+</body>
+
+</html>

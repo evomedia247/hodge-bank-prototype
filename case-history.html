@@ -1,0 +1,996 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    <title>BROKER PORTAL</title>
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-4.1.3/bootstrap.min.css">
+    <script src="vendor/js/jquery-3.3.1/jquery-3.3.1.js"></script>
+    <script src="vendor/js/bootstrap-4.1.3/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome-5.7.2/all.css">
+    <script src="vendor/js/jquery.bootstrap-responsive-tabs.min.js"></script>
+    <link rel="stylesheet" href="vendor/css/bootstrap-css-tabs.css">
+    <!-- date picker libraries -->
+    <script src="vendor/js/jquery-cookie-1.4.1/jquery.cookie.min.js"></script>
+
+    <script src="vendor/js/knockout-3.4.2/knockout.min.js"></script>
+    <script src="vendor/js/knockout-mapping-2.4.1/knockout.mapping.min.js"></script>
+    <script src="vendor/js/jquery-mask-1.14.15/jquery.mask.js"></script>
+    <script src="vendor/js/modernizr-2.8.3/modernizr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <!-- Tooltip -->
+    <script src="js/tooltip.js"></script>
+    <!-- https://bootstrap-datepicker.readthedocs.io -->
+    <link rel="stylesheet" href="vendor/css/datepicker.min.css">
+    <link rel="stylesheet" href="css/broker-portal.css">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="32x32">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="192x192">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesome-bootstrap-checkbox/1.0.2/awesome-bootstrap-checkbox.css">
+
+    <!-- Load Validation fetchMessageProperties into JavaScript -->
+</head>
+
+<body class="my-login-page">
+    <nav class="navbar sticky-top navbar-expand-md navbar-light" style="min-height: 125px; margin-bottom: 0px">
+        <div class="container">
+            <div class="d-flex w-100">
+                <a class="logo" id="hodgeLogo" href="dashboard.html"> </a>
+                <div id="navContactDetails">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">Contact our Adviser Support team:</td>
+                            </tr>
+                            <tr>
+                                <td class="telIconNav"><span class="fa fa-phone"></span></td>
+                                <td><span class="telNoNav">0800 731 4076</span> <span class="hoursNav">Mon-Fri 9am
+                                            to 5pm</span></td>
+                            </tr>
+                            <tr>
+                                <td class="emailIconNav"><span class="fa fa-envelope"></span></td>
+                                <td> <a href="mailto:lendingsupport@hodge.co.uk">lendingsupport@hodge.co.uk</a> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+            </div>
+        </div>
+        <div class="navbar subnav sticky-top navbar-expand-md navbar-light">
+            <div class="container">
+                <div class="w-100">
+                    <div class="collapse navbar-collapse" id="navbarToggler">
+                        <ul id="main-nav" class="navbar-nav w-100">
+                            <li class="nav-item d-flex active">
+                                <a href="dashboard.html" id="homeLink" class="align-self-center"><span class="fa fa-home"> </span> Home</a>
+                            </li>
+                            <li class="nav-item dropdown d-flex">
+                                <a href="https://www.hodgeforintermediaries.co.uk/resources/" target="_blank" id="resourcesLink" class="align-self-center"><span class="fa fa-archive"> </span> Resources</a>
+                            </li>
+                            <li class="nav-item d-flex">
+                                <a id="companiesAndContacts" href="/companiescontacts-advisorsearch.html" class="align-self-center"><span class="fa fa-user"></span> Companies and Contacts</a>
+                            </li>
+                            <li class="nav-item d-flex ml-md-auto">
+                                <a href="/login.html" id="logoutLink" class="align-self-center"><span class="fa fa-sign-out"> </span>
+                                        Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="h-70">
+        <div class="container main-page-container pghelper-bs4-grid-parent-relative">
+            <div class="clear-fix-up-xxl"></div>
+            <div class="quote-details">
+                <div class="form-row">
+                    <!-- Remove this if statement div once the argument gets passed in -->
+                    <div class="col-md-3 pr-3" id="sidenav">
+                        <nav id="side-nav">
+                            <div class="mb-2">
+                                <h1 id="casedetailsh1" style="margin-bottom: -6px!important;">Case: <span>H019185</span></h1>
+                                <p class="mb-1">Case assigned to Bri Rees</p>
+                                <h3><span class="badge badge-success w-100" style="font-size: 1em" data-bind="text: statusType"></span> </h3>
+                                <small><div class="btn btn-success badge badge-success" style="font-size: 1.1em; background: #ffcB05; color: #212529;" data-toggle="modal" data-target="#showNoteModal" data-bind="click: showNote('Vulnerable Customer', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis, dui sed venenatis venenatis, odio nibh lobortis turpis, sed consectetur mauris magna at odio. Donec iaculis mattis ex, ac dictum odio faucibus et. Proin convallis ut neque vel aliquet. Nam convallis ligula in augue iaculis, rutrum pellentesque turpis mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec lacus eros. Vestibulum vehicula purus quis interdum volutpat. Sed nec elit odio. Proin in euismod lacus, ac auctor ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque maximus, ipsum egestas blandit pretium, nisl urna pellentesque nibh, vitae fermentum sem turpis nec metus. Ut quis felis egestas elit pellentesque accumsan sit amet mattis diam. Donec rutrum luctus posuere.', '03/04/2020', 'Callum Smith')">Vulnerable <i class="fas fa-file-alt"></i></div></small>
+                                <script>
+                                    var noteBody = ko.observable();
+                                    var noteTitle = ko.observable();
+                                    var noteDate = ko.observable();
+                                    var noteName = ko.observable();
+
+                                    function showNote(title, body, date, name) {
+                                        noteTitle(title);
+                                        noteBody(body);
+                                        noteDate(date);
+                                        noteName(name);
+                                    };
+                                </script>
+                                <div class="modal" id="showNoteModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
+                                    <div class="modal-dialog" style="max-width: 800px;">
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="padding: .7rem 1rem .5rem;">
+                                                <h3 class="m-0">Case note for H019185</h3>
+                                                <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">×</button>
+                                            </div>
+                                            <div class="modal-body p-3" id="modal-body" style="height: auto; max-height: 80vh; overflow: auto">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <u><h3 class="m-0"><b data-bind="text: noteTitle()"></b></h3></u>
+                                                        <small data-bind="text: noteName()"></small> | <small data-bind="text: noteDate()"></small>
+                                                        <p class="mt-2" data-bind="text: noteBody()"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ko if: sanctions -->
+                                <small><div class="badge badge-warning" style="font-size: 1.1em; background: #ffcB05; color: #212529;">Sanctions / PEP</div></small>
+                                <!-- /ko -->
+                                <!-- ko if: risk -->
+                                <small><div class="badge badge-warning" style="font-size: 1.1em; background: #ffcB05; color: #212529;">High Risk</div></small>
+                                <!-- /ko -->
+                                <!-- ko if: letter -->
+                                <small><div class="badge badge-warning" style="font-size: 1.1em; background: #ffcB05; color: #212529;">Letter of Authority</div></small>
+                                <!-- /ko -->
+                                <!-- ko if: power -->
+                                <small><div class="badge badge-warning" style="font-size: 1.1em; background: #ffcB05; color: #212529;">Power of Attorney</div></small>
+                                <!-- /ko -->
+                            </div>
+                            <a href="/H019185.html" type="button">
+                                <li id="case-summary-link" class=" sidenav mb-1 done text-white" data-bind="css: { active: selectedPage() === 'SUMMARY', 'done text-white': selectedPage() != 'SUMMARY' }">
+                                    Case summary
+                                </li>
+                            </a>
+                            <a href="/documents.html" type="button">
+                                <li id="case-documents-link" class="sidenav mb-1 done text-white" data-bind="css: { active: selectedPage() === 'DOCUMENTS', 'done text-white': selectedPage() != 'DOCUMENTS' }">Documents
+                                </li>
+                            </a>
+                            <a href="/messages.html" type="button" class="w-100">
+                                <li id="case-messages-link" href="#" class="sidenav mb-1 done text-white" data-bind="css: { active: selectedPage() === 'MESSAGES', 'done text-white': selectedPage() != 'MESSAGES' }">Messages
+                                    <div class="badge badge-success float-right mt-1 mr-2" style="color: #223b47">3 New</div>
+                                </li>
+                            </a>
+                            <a href="/case-notes.html" type="button" class="w-100">
+                                <li id="case-messages-link" href="#" class="sidenav mb-1 done text-white" data-bind="css: { active: selectedPage() === 'CASENOTES', 'done text-white': selectedPage() != 'CASENOTES' }">Case Notes</li>
+                            </a>
+                            <a href="/underwriting-v1-main-screen.html" type="button" class="w-100">
+                                <li id="case-messages-link" href="#" class="sidenav mb-1 done text-white" data-bind="css: { active: selectedPage() === 'UNDERWRITING', 'done text-white': selectedPage() != 'UNDERWRITING' }">Underwriting</li>
+                            </a>
+                            <a href="/casecompletion.html" type="button" class="w-100">
+                                <li id="case-messages-link" href="#" class="sidenav mb-1 done text-white" data-bind="css: { active: selectedPage() === 'COMPLETION', 'done text-white': selectedPage() != 'COMPLETION' }">Completion</li>
+                            </a>
+                            <a href="/case-history.html" type="button" class="w-100">
+                                <li id="case-messages-link" href="#" class="sidenav mb-1 done text-white" data-bind="css: { active: selectedPage() === 'CASEHISTORY', 'done text-white': selectedPage() != 'CASEHISTORY' }">Case History</li>
+                            </a>
+                            <a href="/mortgage-dashboard.html" id="previousBtnInternal" type="button" name="action" value="back button">
+                                <li id="case-messages-link" href="#" class="sidenav mb-1 done text-white">
+                                    Back to mortgage cases
+                                </li>
+                            </a>
+                        </nav>
+                        <!-- start of delete modal -->
+                        <div class="modal" id="reviewEditDataModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
+                            <form id="reviewEditDataForm" method="POST" action="/case/dip/edit-dip-values/1326">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="padding: .7rem 1rem .5rem;">
+                                            <h3 class="m-0">Editing data may invalidate your ESIS</h3>
+                                            <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body p-3" id="modal-body-review-edit-data">
+                                            <div class="w-100">
+                                                <button type="submit" style="height:80px; font-size:1.2em; cursor: pointer;" class="btn btn-default btn-block col-12">
+                                                        <span>I understand, amend data</span>
+                                                    </button>
+                                                <a style="height:80px; padding-top:26px; font-size:1.2em" class="btn btn-default btn-block col-12" target="_blank" href="/advisor/document/case-document?id=10708&amp;docName=DIPData&amp;surname=Beale" onclick="hideReviewEditDataModal()">Review data</a>
+                                                <a data-dismiss="modal" style="height:40px; padding-top:6px; font-size:1.2em; cursor: pointer;" class="btn btn-default btn-block col-12">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end of delete modal -->
+                        <script>
+                            // <![CDATA[
+                            function showReviewEditDataModal() {
+                                $('#reviewEditDataModal').modal('show');
+                            };
+
+                            function hideReviewEditDataModal() {
+                                $('#reviewEditDataModal').modal('hide');
+                            };
+                            // ]]>
+                            var selectedFlagValue = ko.observable();
+                            var vulnerable = ko.observable();
+                            var sanctions = ko.observable();
+                            var risk = ko.observable();
+                            var letter = ko.observable();
+                            var power = ko.observable();
+
+                            var noteBody = ko.observable();
+                            var noteTitle = ko.observable();
+                            var noteDate = ko.observable();
+                            var noteName = ko.observable();
+
+                            function showNote(title, body, date, name) {
+                                noteTitle(title);
+                                noteBody(body);
+                                noteDate(date);
+                                noteName(name);
+                            };
+                        </script>
+                    </div>
+                    <!-- main-content -->
+                    <div class="col-md-9">
+                        <div id="underwritingPanel" class="fade-in">
+                            <!-- ko if: statusType() == 'DIP EXPIRED' -->
+                            <div class="form-row">
+                                <div class="col-md-12">
+                                    <h1>DIP Expired</h1>
+                                </div>
+                            </div>
+                            <!-- /ko -->
+                            <!-- ko ifnot: statusType() == 'DIP EXPIRED' -->
+
+                            <div class="form-row">
+                                <div class="col-md-12">
+                                    <h2 class="h1 mb-2">Case history</h2>
+                                </div>
+                                <div class="col-md-12">
+
+                                    <table class="table table-sm table-striped table-bordered text-left">
+                                        <thead>
+                                            <tr>
+                                                <td>Event</td>
+                                                <td>Type</td>
+                                                <td>Date</td>
+                                                <td>Time</td>
+                                                <td>Name</td>
+                                                <td>User type</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- ko foreach: caseNoteList().slice(0).reverse() -->
+                                            <tr>
+                                                <td data-bind="text: eventName">...</td>
+                                                <td data-bind="text: eventType">...</td>
+                                                <td data-bind="text: dateCreated">...</td>
+                                                <td data-bind="text: timeCreated">...</td>
+                                                <td data-bind="text: advisorName">...</td>
+                                                <td data-bind="text: userType">...</td>
+                                            </tr>
+                                            <!-- /ko -->
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+
+
+
+                            </div>
+
+
+
+                            <!-- /ko -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="d-md-flex justify-content-between bd-highlight mb-3">
+                <div class="w-100">
+                    <p class="sub-text slate" id="disclaimerText">This site is intended for professional intermediaries only and has not been approved for use with consumers. </p>
+                    <a class="small-prints" id="cookieLink" target="_blank" href="https://www.hodgeforintermediaries.co.uk/cookie-policy/">Cookies
+                        Policy</a> |
+                    <a class="small-prints" target="_blank" id="privacyLink" href="https://www.hodgeforintermediaries.co.uk/privacy-policy/">Privacy
+                        Policy</a>
+                </div>
+                <div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <hr>
+                <div class="col-md-12 mb-3">
+                    <a href="/dashboard.html" id="footerLogoLink" class="logo--white"> </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="small-prints" id="footerSmallPrint">Hodge is a trading name of Julian Hodge Bank Limited which is registered in England and Wales (No. 743437) and Hodge Life Assurance Company Limited which is registered in England and Wales (No. 837457). Both companies are authorised
+                        by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. Both companies are registered in England and Wales at One Central Square, Cardiff, CF10 1FS.
+                    </p>
+                    <p class="small-prints">© Copyright Hodge 2018</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="social-icons icon-circle icon-zoom list-unstyled list-inline text-right">
+                        <li>
+                            <a id="twitterIcon" target="_blank" href="https://twitter.com/HodgeLifetime"><i style="font-size: 1.6em;" class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a id="youTubeIcon" target="_blank" href="https://www.youtube.com/channel/UC0PN7BOjxp2Vt8wFbcoIXEA"><i style="font-size: 1.6em;" class="fab fa-youtube"></i></a>
+                        </li>
+                        <li>
+                            <a id="linkedInIcon" target="_blank" href="https://www.linkedin.com/company/1074291/"><i style="font-size: 1.6em;" class="fab fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+
+    <div class="modal" id="saveModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="padding: .7rem 1rem .5rem;">
+                    <h3 class="m-0">Save changes</h3>
+                    <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body p-3" id="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Add case note</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col"><a data-dismiss="modal" onclick="editDipCredit(false).editAppCredit(false).editAppProperty(false)" type="application/octet-stream" class="btn btn-default btn-block">Cancel</a></div>
+                        <div class="col"><a data-dismiss="modal" onclick="editDipCredit(false).editAppCredit(false).editAppProperty(false)" aria-hidden="true" target="_self" type="application/octet-stream" class="btn btn-default btn-block">Save</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <style>
+        input[type="checkbox"].styled:checked+label:after,
+        input[type="radio"].styled:checked+label:after,
+        .checkbox input[type=checkbox]:checked+label:after {
+            font-family: 'Font Awesome 5 Free';
+            content: "\f00c";
+        }
+        
+        input[type="checkbox"].styled:checked label:after,
+        input[type="radio"].styled:checked label:after,
+        .checkbox label:after {
+            padding-left: 4px;
+            padding-top: 2px;
+            font-size: 9px;
+        }
+        
+        .checkbox {
+            top: 0
+        }
+        
+        .audit {
+            line-height: 1.2em;
+        }
+        
+        #surveyinstructed {
+            display: none
+        }
+        
+        #surveycompleted {
+            display: none
+        }
+        
+        .disabled {
+            opacity: .6 !important;
+        }
+        /* .form-control.success {
+            background-color: limegreen;
+            color: #223b47;
+        }
+        
+        .form-control.failed {
+            background-color: tomato;
+            color: white
+        } */
+        
+        .input-group-prepend {
+            margin-right: -1px;
+            padding: 2px 8px;
+            color: white;
+            background: #223b47;
+            vertical-align: middle;
+            height: 35px;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        select.form-control[multiple],
+        select.form-control[size] {
+            height: 34px;
+        }
+        
+        .custom-control-input:checked~.custom-control-label::before {
+            color: white !important;
+            background-color: green !important;
+        }
+        
+        .checkbox label::before {
+            top: 0;
+        }
+        
+        .checkbox label {
+            padding: 2px 15px 0 8px;
+        }
+        
+        #companies-contacts-subnav a.btn.btn-primary {
+            height: 80x;
+            padding-top: 10px;
+            vertical-align: bottom;
+            font-family: "Hodge-Aleo", "Times", "Times New Roman", serif;
+            font-size: 1.3em;
+            color: white !important;
+            padding-top: 8px;
+            font-weight: bold;
+        }
+        
+        #companies-contacts-subnav a span {
+            color: white !important
+        }
+        
+        #companies-contacts-subnav a.active span {
+            color: #223b47 !important
+        }
+        
+        #companies-contacts-subnav a.btn.btn-primary.active {
+            background-color: #ffcB05 !important;
+            color: #223b47 !important;
+            height: 80x;
+            vertical-align: bottom;
+        }
+        
+        #companies-contacts-subnav a.btn.btn-primary:hover {
+            color: #223b47 !important
+        }
+        
+        #companies-contacts-subnav a.btn.btn-primary:hover span {
+            color: #223b47 !important
+        }
+        
+        .visually-hidden {
+            overflow: hidden;
+            position: absolute;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+            padding: 0;
+            border: 0;
+        }
+        
+        .checkbox-primary input[type="checkbox"]:checked+label::before,
+        .checkbox-primary input[type="radio"]:checked+label::before {
+            background-color: #223b47 !important;
+            border-color: #223b47 !important;
+        }
+    </style>
+    <script>
+        var selectedPage = ko.observable();
+        var showQ1 = ko.observable(false);
+
+        var showCompletion = ko.observable(false);
+
+        function overModal() {
+            $('#overrideModal').modal('show')
+        };
+
+        function saveModal() {
+            $('#saveModal').modal('show');
+        };
+
+        var statusType = ko.observable('DIP Referred');
+
+        var caseNoteList = ko.observableArray([{
+            "eventName": "DIP Created",
+            "eventType": "Case Status",
+            "dateCreated": "04/03/2020",
+            "timeCreated": "09:25",
+            "advisorName": "Calum Banner",
+            "userType": "Advisor"
+        }, {
+            "eventName": "DIP Partially Complete",
+            "eventType": "Case Status",
+            "dateCreated": "04/03/2020",
+            "timeCreated": "10:30",
+            "advisorName": "Calum Banner",
+            "userType": "Advisor"
+        }, {
+            "eventName": "DIP Submitted",
+            "eventType": "Case Status",
+            "dateCreated": "04/03/2020",
+            "timeCreated": "11:58",
+            "advisorName": "Calum Banner",
+            "userType": "Advisor"
+        }, {
+            "eventName": "DIP Data",
+            "eventType": "Document Created",
+            "dateCreated": "04/03/2020",
+            "timeCreated": "11:59",
+            "advisorName": "System",
+            "userType": "System"
+        }, {
+            "eventName": "DIP Under Review",
+            "eventType": "Case Status",
+            "dateCreated": "04/03/2020",
+            "timeCreated": "12:32",
+            "advisorName": "Quinn Watson",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Underwriter Assigned",
+            "eventType": "Case Assignment",
+            "dateCreated": "04/03/2020",
+            "timeCreated": "12:38",
+            "advisorName": "Tevin Healy",
+            "userType": "Hodge"
+        }, {
+            "eventName": "DIP Credit Underwriting Updated",
+            "eventType": "Case Milestone",
+            "dateCreated": "04/03/2020",
+            "timeCreated": "12:55",
+            "advisorName": "Tevin Healy",
+            "userType": "Hodge"
+        }, {
+            "eventName": "DIP Credit Accept 1",
+            "eventType": "Case Milestone",
+            "dateCreated": "04/03/2020",
+            "timeCreated": "12:57",
+            "advisorName": "Tevin Healy",
+            "userType": "Hodge"
+        }, {
+            "eventName": "DIP Credit Accept 2",
+            "eventType": "Case Milestone",
+            "dateCreated": "04/03/2020",
+            "timeCreated": "13:04",
+            "advisorName": "Rose Paul",
+            "userType": "Hodge"
+        }, {
+            "eventName": "DIP Accepted",
+            "eventType": "Case Status",
+            "dateCreated": "04/03/2020",
+            "timeCreated": "13:04",
+            "advisorName": "Rose Paul",
+            "userType": "Hodge"
+        }, {
+            "eventName": "ESIS",
+            "eventType": "Document Created",
+            "dateCreated": "04/03/2020",
+            "timeCreated": "13:04",
+            "advisorName": "System",
+            "userType": "System"
+        }, {
+            "eventName": "Full Application Partially Complete",
+            "eventType": "Case Status",
+            "dateCreated": "07/03/2020",
+            "timeCreated": "16:05",
+            "advisorName": "System",
+            "userType": "System"
+        }, {
+            "eventName": "Full Application Submitted",
+            "eventType": "Case Status",
+            "dateCreated": "07/03/2020",
+            "timeCreated": "16:23",
+            "advisorName": "System",
+            "userType": "System"
+        }, {
+            "eventName": "Application",
+            "eventType": "Document Created",
+            "dateCreated": "08/03/2020",
+            "timeCreated": "16:23",
+            "advisorName": "System",
+            "userType": "System"
+        }, {
+            "eventName": "Full Application Under Review",
+            "eventType": "Case Status",
+            "dateCreated": "08/03/2020",
+            "timeCreated": "08:47",
+            "advisorName": "System",
+            "userType": "System"
+        }, {
+            "eventName": "Underwriter Assigned",
+            "eventType": "Case Assignment",
+            "dateCreated": "08/03/2020",
+            "timeCreated": "08:47",
+            "advisorName": "Angus Schofield",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Full App Property Underwriting Updated",
+            "eventType": "Case Milestone",
+            "dateCreated": "08/03/2020",
+            "timeCreated": "09:03",
+            "advisorName": "Quinn Watson",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Full App Credit Underwriting Updated",
+            "eventType": "Case Milestone",
+            "dateCreated": "08/03/2020",
+            "timeCreated": "09:04",
+            "advisorName": "Angus Schofield",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Employment Income",
+            "eventType": "Document Upload",
+            "dateCreated": "11/03/2020",
+            "timeCreated": "12:45",
+            "advisorName": "Calum Banner",
+            "userType": "Advisor"
+        }, {
+            "eventName": "Investment Income",
+            "eventType": "Document Upload",
+            "dateCreated": "11/03/2020",
+            "timeCreated": "12:46",
+            "advisorName": "Calum Banner",
+            "userType": "Advisor"
+        }, {
+            "eventName": "Full App Credit Underwriting Updated",
+            "eventType": "Case Milestone",
+            "dateCreated": "11/03/2020",
+            "timeCreated": "13:36",
+            "advisorName": "Angus Schofield",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Full App Property Underwriting Updated",
+            "eventType": "Case Milestone",
+            "dateCreated": "11/03/2020",
+            "timeCreated": "14:25",
+            "advisorName": "Yasir Ahmed",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Property Data Updated",
+            "eventType": "Case Data",
+            "dateCreated": "12/03/2020",
+            "timeCreated": "08:57",
+            "advisorName": "Quinn Watson",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Customer Due Diligence",
+            "eventType": "Document Upload",
+            "dateCreated": "12/02/2020",
+            "timeCreated": "09:14",
+            "advisorName": "Calum Banner",
+            "userType": "Advisor"
+        }, {
+            "eventName": "Loan Data Updated",
+            "eventType": "Case Data",
+            "dateCreated": "12/02/2020",
+            "timeCreated": "10:04",
+            "advisorName": "Angus Schofield",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Full App Credit Underwriting Updated",
+            "eventType": "Case Milestone",
+            "dateCreated": "12/02/2020",
+            "timeCreated": "10:05",
+            "advisorName": "Angus Schofield",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Fees Data Updated",
+            "eventType": "Case Data",
+            "dateCreated": "12/02/2020",
+            "timeCreated": "10:05",
+            "advisorName": "Angus Schofield",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Bank Statements",
+            "eventType": "Document Upload",
+            "dateCreated": "16/03/2020",
+            "timeCreated": "11:07",
+            "advisorName": "Calum Banner",
+            "userType": "Advisor"
+        }, {
+            "eventName": "Full App Credit Underwriting Updated",
+            "eventType": "Case Milestone",
+            "dateCreated": "16/03/2020",
+            "timeCreated": "11:07",
+            "advisorName": "Angus Schofield",
+            "userType": "Hodge"
+        }, {
+            "eventName": "ESIS",
+            "eventType": "Document Created",
+            "dateCreated": "16/03/2020",
+            "timeCreated": "11:11",
+            "advisorName": "Angus Schofield",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Full App Credit Underwriting Updated",
+            "eventType": "Case Milestone",
+            "dateCreated": "16/03/2020",
+            "timeCreated": "11:13",
+            "advisorName": "Angus Schofield",
+            "userType": "Advisor"
+        }, {
+            "eventName": "Full App Credit Accept 1",
+            "eventType": "Case Milestone",
+            "dateCreated": "16/03/2020",
+            "timeCreated": "11:20",
+            "advisorName": "Angus Schofield",
+            "userType": "Advisor"
+        }, {
+            "eventName": "Full App Credit Accept 2",
+            "eventType": "Case Milestone",
+            "dateCreated": "16/03/2020",
+            "timeCreated": "12:14",
+            "advisorName": "Saffa Ochoa",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Full App Property Underwriting Updated",
+            "eventType": "Case Milestone",
+            "dateCreated": "20/03/2020",
+            "timeCreated": "09:31",
+            "advisorName": "Yasir Ahmed",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Full App Property Underwriting Updated",
+            "eventType": "Case Milestone",
+            "dateCreated": "20/03/2020",
+            "timeCreated": "10:45",
+            "advisorName": "Yasir Ahmed",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Full App Property Accept 1",
+            "eventType": "Case Milestone",
+            "dateCreated": "20/03/2020",
+            "timeCreated": "10:51",
+            "advisorName": "Yasir Ahmed",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Full App Property Accept 2",
+            "eventType": "Case Milestone",
+            "dateCreated": "20/03/2020",
+            "timeCreated": "12:53",
+            "advisorName": "Rhodri Whitley",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Offer Issued",
+            "eventType": "Case Milestone",
+            "dateCreated": "20/03/2020",
+            "timeCreated": "12:53",
+            "advisorName": "Rhodri Whitley",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Full Application Approved",
+            "eventType": "Case Status",
+            "dateCreated": "20/03/2020",
+            "timeCreated": "12:53",
+            "advisorName": "System",
+            "userType": "System"
+        }, {
+            "eventName": "ESIS",
+            "eventType": "Document Created",
+            "dateCreated": "20/03/2020",
+            "timeCreated": "12:53",
+            "advisorName": "System",
+            "userType": "System"
+        }, {
+            "eventName": "Offer Issued",
+            "eventType": "Document Created",
+            "dateCreated": "20/03/2020",
+            "timeCreated": "12:53",
+            "advisorName": "System",
+            "userType": "System"
+        }, {
+            "eventName": "Completion Information Updated",
+            "eventType": "Case Milestone",
+            "dateCreated": "20/03/2020",
+            "timeCreated": "14:42",
+            "advisorName": "Quinn Watson",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Awaiting Legal Completion",
+            "eventType": "Case Status",
+            "dateCreated": "20/03/2020",
+            "timeCreated": "14:42",
+            "advisorName": "System",
+            "userType": "System"
+        }, {
+            "eventName": "Funds Raised for Release",
+            "eventType": "Case Milestone",
+            "dateCreated": "04/04/2020",
+            "timeCreated": "08:21",
+            "advisorName": "Quinn Watson",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Funds Release  Authorisation 1",
+            "eventType": "Case Milestone",
+            "dateCreated": "04/04/2020",
+            "timeCreated": "15:32",
+            "advisorName": "Saffa Ochoa",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Funds Release Authorisation 2",
+            "eventType": "Case Milestone",
+            "dateCreated": "04/04/2020",
+            "timeCreated": "16:56",
+            "advisorName": "Rhodri Whitley",
+            "userType": "Hodge"
+        }, {
+            "eventName": "Forwarded for Servicing",
+            "eventType": "Case Milestone",
+            "dateCreated": "04/04/2020",
+            "timeCreated": "16:56",
+            "advisorName": "Rhodri Whitley",
+            "userType": "Hodge"
+        }]);
+
+        var noteTitleInput = ko.observable();
+        var noteBodyInput = ko.observable();
+        var dateCreatedInput = ko.observable();
+        var advisorNameInput = ko.observable();
+
+        function saveNote() {
+            caseNoteList.push({
+                noteTitleInput,
+                noteBodyInput,
+                dateCreatedInput,
+                advisorNameInput
+            });
+        };
+
+        var statusList = [{
+            name: 'DIP Referred',
+        }, {
+            name: 'DIP EXPIRED',
+        }, {
+            name: 'DIP SUBMITTED',
+        }, {
+            name: 'DIP DECLINED',
+        }, {
+            name: 'DIP ACCEPTED',
+        }, {
+            name: 'APPLICATION PARTIALLY COMPLETE',
+        }, {
+            name: 'APPLICATION SUBMITTED',
+        }, {
+            name: 'APPLICATION UNDER REVIEW',
+        }, {
+            name: 'APPLICATION DECLINED',
+        }, {
+            name: 'APPLICATION ACCEPTED',
+        }, {
+            name: 'APPLICATION EXPIRED'
+        }, {
+            name: 'OFFER',
+        }];
+        $('.panel-collapse').on('show.bs.collapse', function() {
+            $(this).siblings('.panel-heading').addClass('active');
+        });
+
+        $('.panel-collapse').on('hide.bs.collapse', function() {
+            $(this).siblings('.panel-heading').removeClass('active');
+        });
+
+        // Constructor for an object with two properties
+        var Value = function(nameVal, enumVal) {
+            this.valueName = nameVal;
+            this.valueEnum = enumVal;
+        };
+
+        var availableValues = ko.observableArray([
+            new Value("Please Select", null),
+            new Value("Pass", 'PASS'),
+            new Value("Out of Policy", 'OUT OF POLICY')
+        ]);
+
+        var showApplication = ko.observable(false);
+
+        var selectedAffordabilityDIPValue = ko.observable();
+        var selectedEligibilityDIPValue = ko.observable();
+        var selectedCreditDIPValue = ko.observable();
+        var selectedAffordabilityAPPValue = ko.observable();
+        var selectedEligibilityAPPValue = ko.observable();
+        var selectedCreditAPPValue = ko.observable();
+        var surveyInstructed = ko.observable(false);
+        var surveyComplete = ko.observable(false);
+        var propertyAcceptableChecked = ko.observable(false);
+        var propertyConditionChecked = ko.observable(false);
+        var preOfferConditionChecked = ko.observable(false);
+        var propertyValue = ko.observable();
+        var propertyAcceptable = ko.observable();
+        var preOfferCondition = ko.observable();
+        var propertyCondition = ko.observable();
+        var editDipCredit = ko.observable(false);
+        var editAppCredit = ko.observable(false);
+        var editAppProperty = ko.observable(false);
+        var documentsVerified = ko.observable();
+        var identityVerified = ko.observable();
+        var preOfferConditionsSatisfied = ko.observable();
+        var creditConditionsSet = ko.observable();
+        var acceptCredit = ko.observable(false);
+        var acceptProperty = ko.observable(false);
+
+        function acceptDip() {
+            $('#acceptModal').modal('hide');
+            statusType('DIP ACCEPTED');
+            editDipCredit(false)
+        }
+
+        function declineDip() {
+            $('#declineModal').modal('hide');
+            statusType('DIP DECLINED')
+        }
+
+        function acceptApp() {
+            $('#acceptAppModal').modal('hide');
+            statusType('APPLICATION ACCEPTED');
+            editAppCredit(false)
+        }
+
+        function acceptCredit() {
+            statusType('APPLICATION ACCEPTED');
+            editAppCredit(false)
+        }
+
+        function declineApp() {
+            $('#declineAppModal').modal('hide');
+            statusType('APPLICATION DECLINED')
+        }
+
+        function check1() {
+            if ($("#check1").is(":checked")) {
+                //Code to disable checkbox after checked
+                $('#check1').attr('disabled', true);
+                surveyInstructed(true);
+                $('#surveyinstructed').show();
+            }
+        }
+
+        function check2() {
+            if ($("#check2").is(":checked")) {
+                //Code to disable checkbox after checked
+                $('#check2').attr('disabled', true);
+                surveyComplete(true);
+                $('#surveycompleted').show();
+            }
+        }
+
+        function check3() {
+            if ($("#check3").is(":checked")) {
+                //Code to disable checkbox after checked
+                // $('#check3').attr('disabled', true);
+                propertyAcceptableChecked(true)
+            }
+        }
+
+        function check4() {
+            if ($("#check4").is(":checked")) {
+                //Code to disable checkbox after checked
+                // $('#check4').attr('disabled', true);
+                propertyConditionChecked(true)
+            }
+        }
+
+        function check5() {
+            if ($("#check5").is(":checked")) {
+                //Code to disable checkbox after checked
+                // $('#check5').attr('disabled', true);
+                preOfferConditionChecked(true)
+            }
+        }
+
+        selectedPage('CASEHISTORY');
+        ko.applyBindings();
+    </script>
+</body>
+
+</html>

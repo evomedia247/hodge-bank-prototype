@@ -1,0 +1,317 @@
+[{
+        "_id": "0",
+        "dateCreated": "08/03/2019",
+        "dateSubmitted": "26/04/2019",
+        "status": "PENDING",
+        "adviser": "Gary Webster",
+        "company": "Mortgage Brokerage",
+        "assignedTo": "Rhodri Whitley",
+        "numberOfApplicants": "0",
+        "eligibility": "false",
+        "caseReference": "H019185",
+        "applicantOne": {
+            "_id": "0",
+            "title": "Ms.",
+            "gender": "Unspecified",
+            "firstName": "Brown",
+            "middleName": "Sparks",
+            "lastName": "Mccray",
+            "previousNames": "Warren",
+            "dateOfBirth": "13/04/1936",
+            "rightsToReside": "true",
+            "maritalStatus": "Married",
+            "residentialStatus": "Renting",
+            "currentAddress": {
+                "flatNumber": "9",
+                "houseNumber": "128",
+                "houseName": "Test",
+                "street": "Jodie Court",
+                "district": "undefined",
+                "city": "London",
+                "county": "Cleveland",
+                "postcode": "DA9 9QP",
+                "country": "US Minor Outlying Islands"
+            },
+            "yearsAtAddress": "27",
+            "monthsAtAddress": "3"
+        },
+        "income": {
+            "employment": [{
+                    "_id": "0",
+                    "applicant": "2",
+                    "occupation": "Dentistry Professor",
+                    "grossIncome": "£10,658",
+                    "additionalIncome": "£9,781"
+                },
+                {
+                    "_id": "1",
+                    "applicant": "1",
+                    "occupation": "Printing Machine Operator",
+                    "grossIncome": "£49,460",
+                    "additionalIncome": "£11,403"
+                },
+                {
+                    "_id": "2",
+                    "applicant": "1",
+                    "occupation": "Printing Machine Operator",
+                    "grossIncome": "£41,893",
+                    "additionalIncome": "£11,690"
+                }
+            ],
+            "selfEmploymentSoleTrader": [{
+                    "_id": "0",
+                    "applicant": "1",
+                    "occupation": "Postsecondary Career and Technical Education Teacher",
+                    "grossIncome": "£54,120",
+                    "additionalIncome": "£4,188"
+                },
+                {
+                    "_id": 1,
+                    "applicant": "1",
+                    "occupation": "Shipfitter",
+                    "grossIncome": "£23,172",
+                    "additionalIncome": "£12,955"
+                }
+            ],
+            "selfEmploymentDirectorPartner": {
+                "_id": "0",
+                "applicant": "2",
+                "occupation": "Electric Wheelchair Repairer",
+                "grossIncome": "£10,901",
+                "additionalIncome": "£10,094"
+            },
+            "statePensionAndBenefits": [{
+                    "_id": "0",
+                    "applicant": "2",
+                    "occupation": "Printing Machine Operator",
+                    "grossIncome": "£10,570",
+                    "additionalIncome": "£11,449"
+                },
+                {
+                    "_id": "1",
+                    "applicant": "2",
+                    "occupation": "Optical Scientist",
+                    "grossIncome": "£46,660",
+                    "additionalIncome": "£11,317"
+                },
+                {
+                    "_id": "2",
+                    "applicant": "1",
+                    "occupation": "Auto Electrician",
+                    "grossIncome": "£28,093",
+                    "additionalIncome": "£10,136"
+                }
+            ],
+            "definedBenefits": [{
+                    "_id": "0",
+                    "applicant": "1",
+                    "occupation": "Dentistry Professor",
+                    "grossIncome": "£54,738",
+                    "additionalIncome": "£12,374"
+                },
+                {
+                    "_id": "1",
+                    "applicant": "2",
+                    "occupation": "Postsecondary Career and Technical Education Teacher",
+                    "grossIncome": "£33,639",
+                    "additionalIncome": "£9,003"
+                }
+            ],
+            "pensionSavings": [{
+                    "id": "0",
+                    "applicant": "2",
+                    "occupation": "Shipfitter",
+                    "grossIncome": "£17,362",
+                    "additionalIncome": "£14,893"
+                },
+                {
+                    "id": "1",
+                    "applicant": "1",
+                    "occupation": "Tool Designer",
+                    "grossIncome": "£52,045",
+                    "additionalIncome": "£10,595"
+                },
+                {
+                    "id": "2",
+                    "applicant": "2",
+                    "occupation": "Lighthouse Keeper",
+                    "grossIncome": "£40,406",
+                    "additionalIncome": "£2,577"
+                }
+            ],
+            "rentalIncome": [{
+                    "_id": "0",
+                    "applicant": "1",
+                    "occupation": "Electric Wheelchair Repairer",
+                    "grossIncome": "£21,387",
+                    "additionalIncome": "£7,220"
+                },
+                {
+                    "_id": "1",
+                    "applicant": "2",
+                    "occupation": "Postsecondary Career and Technical Education Teacher",
+                    "grossIncome": "£27,175",
+                    "additionalIncome": "£1,182"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "",
+        "dateCreated": "06/03/2019",
+        "dateSubmitted": "12/03/2019",
+        "status": "SUBMITTED",
+        "adviser": "Gary Webster",
+        "company": "Mortgage Brokerage",
+        "assignedTo": "Saffa Ochoa",
+        "numberOfApplicants": "0",
+        "eligibility": "false",
+        "caseReference": "H111110",
+        "applicantOne": {
+            "_id": "0",
+            "title": "Mr.",
+            "gender": "Unspecified",
+            "firstName": "Thomas",
+            "middleName": "",
+            "lastName": "Mills",
+            "previousNames": "",
+            "dateOfBirth": "13/04/1945",
+            "rightsToReside": "true",
+            "maritalStatus": "Married",
+            "residentialStatus": "Renting",
+            "currentAddress": {
+                "flatNumber": "9",
+                "houseNumber": "128",
+                "houseName": "Test",
+                "street": "Jodie Court",
+                "district": "undefined",
+                "city": "London",
+                "county": "Cleveland",
+                "postcode": "DA9 9QP",
+                "country": "US Minor Outlying Islands"
+            },
+            "yearsAtAddress": "27",
+            "monthsAtAddress": "3"
+        },
+        "income": {
+            "employment": [{
+                    "_id": "0",
+                    "applicant": "2",
+                    "occupation": "Dentistry Professor",
+                    "grossIncome": "£10,658",
+                    "additionalIncome": "£9,781"
+                },
+                {
+                    "_id": "1",
+                    "applicant": "1",
+                    "occupation": "Printing Machine Operator",
+                    "grossIncome": "£49,460",
+                    "additionalIncome": "£11,403"
+                },
+                {
+                    "_id": "2",
+                    "applicant": "1",
+                    "occupation": "Printing Machine Operator",
+                    "grossIncome": "£41,893",
+                    "additionalIncome": "£11,690"
+                }
+            ],
+            "selfEmploymentSoleTrader": [{
+                    "_id": "0",
+                    "applicant": "1",
+                    "occupation": "Postsecondary Career and Technical Education Teacher",
+                    "grossIncome": "£54,120",
+                    "additionalIncome": "£4,188"
+                },
+                {
+                    "_id": 1,
+                    "applicant": "1",
+                    "occupation": "Shipfitter",
+                    "grossIncome": "£23,172",
+                    "additionalIncome": "£12,955"
+                }
+            ],
+            "selfEmploymentDirectorPartner": {
+                "_id": "0",
+                "applicant": "2",
+                "occupation": "Electric Wheelchair Repairer",
+                "grossIncome": "£10,901",
+                "additionalIncome": "£10,094"
+            },
+            "statePensionAndBenefits": [{
+                    "_id": "0",
+                    "applicant": "2",
+                    "occupation": "Printing Machine Operator",
+                    "grossIncome": "£10,570",
+                    "additionalIncome": "£11,449"
+                },
+                {
+                    "_id": "1",
+                    "applicant": "2",
+                    "occupation": "Optical Scientist",
+                    "grossIncome": "£46,660",
+                    "additionalIncome": "£11,317"
+                },
+                {
+                    "_id": "2",
+                    "applicant": "1",
+                    "occupation": "Auto Electrician",
+                    "grossIncome": "£28,093",
+                    "additionalIncome": "£10,136"
+                }
+            ],
+            "definedBenefits": [{
+                    "_id": "0",
+                    "applicant": "1",
+                    "occupation": "Dentistry Professor",
+                    "grossIncome": "£54,738",
+                    "additionalIncome": "£12,374"
+                },
+                {
+                    "_id": "1",
+                    "applicant": "2",
+                    "occupation": "Postsecondary Career and Technical Education Teacher",
+                    "grossIncome": "£33,639",
+                    "additionalIncome": "£9,003"
+                }
+            ],
+            "pensionSavings": [{
+                    "id": "0",
+                    "applicant": "2",
+                    "occupation": "Shipfitter",
+                    "grossIncome": "£17,362",
+                    "additionalIncome": "£14,893"
+                },
+                {
+                    "id": "1",
+                    "applicant": "1",
+                    "occupation": "Tool Designer",
+                    "grossIncome": "£52,045",
+                    "additionalIncome": "£10,595"
+                },
+                {
+                    "id": "2",
+                    "applicant": "2",
+                    "occupation": "Lighthouse Keeper",
+                    "grossIncome": "£40,406",
+                    "additionalIncome": "£2,577"
+                }
+            ],
+            "rentalIncome": [{
+                    "_id": "0",
+                    "applicant": "1",
+                    "occupation": "Electric Wheelchair Repairer",
+                    "grossIncome": "£21,387",
+                    "additionalIncome": "£7,220"
+                },
+                {
+                    "_id": "1",
+                    "applicant": "2",
+                    "occupation": "Postsecondary Career and Technical Education Teacher",
+                    "grossIncome": "£27,175",
+                    "additionalIncome": "£1,182"
+                }
+            ]
+        }
+    }
+]

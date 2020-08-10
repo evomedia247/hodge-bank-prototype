@@ -1,0 +1,729 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    <title>BROKER PORTAL</title>
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-4.1.3/bootstrap.min.css">
+    <script src="vendor/js/jquery-3.3.1/jquery-3.3.1.js"></script>
+    <script src="js/jquery.sessionTimeout.js"></script>
+    <script src="vendor/js/bootstrap-4.1.3/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome-5.7.2/all.css">
+    <script src="vendor/js/jquery.bootstrap-responsive-tabs.min.js"></script>
+    <link rel="stylesheet" href="vendor/css/bootstrap-css-tabs.css">
+    <!-- date picker libraries -->
+    <script src="vendor/js/datepicker.min.js"></script>
+
+    <script src="vendor/js/jquery-cookie-1.4.1/jquery.cookie.min.js"></script>
+    <script src="vendor/js/knockout-3.4.2/knockout.min.js"></script>
+    <script src="vendor/js/knockout-mapping-2.4.1/knockout.mapping.min.js"></script>
+    <script src="vendor/js/jquery-mask-1.14.15/jquery.mask.js"></script>
+    <script src="vendor/js/modernizr-2.8.3/modernizr.js"></script>
+    <!-- Tooltip -->
+    <script src="js/tooltip.js"></script>
+    <!-- https://bootstrap-datepicker.readthedocs.io -->
+    <link rel="stylesheet" href="vendor/css/datepicker.min.css">
+    <link rel="stylesheet" href="css/broker-portal.css">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="32x32">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="192x192">
+    <!-- Load Validation fetchMessageProperties into JavaScript -->
+    <script>
+        /*<![CDATA[*/
+        window.messages = {
+            "applicantDetails.age.required": "Enter a valid age.",
+            "adviserSearch.company.invalid": "Enter a valid Company name.",
+            "dashboardSearch.customer.invalid": "Enter a valid Applicant name. Name can contain hyphens and apostrophes.",
+            "contact.firstName.required": "Enter a valid first name.",
+            "applicantDetails.firstName.invalid": "Enter a valid first name. View the information icon for assistance.",
+            "createPassword.invalid": "Enter a valid password.",
+            "adviserSearch.adviser.invalid": "Enter a valid Adviser name. Name can contain hyphens and apostrophes.",
+            "createMobileNumber.match": "Mobile number entries do not match.",
+            "dashboardSearch.customer.required": "Enter an Applicant name.",
+            "propertyValue.max": "Enter a valid property value.",
+            "contact.mobileNumber.required": "Enter a valid mobile number.",
+            "applicantDetails.lastName.required": "Enter applicant's last name.",
+            "brokerFee.required": "Enter an advice fee. View the information icon for assistance.",
+            "dashboardSearch.adviser.required": "Enter an Adviser name.",
+            "applicantDetails.firstName.required": "Enter applicant's first name.",
+            "specifiedTerm.number": "Enter a valid term. View the information icon for assistance.",
+            "acceptablePropertyCriteria": "Select whether the property meets Hodge`s acceptable property criteria.",
+            "createSecurity.mobileNumber.required": "Enter a mobile number.",
+            "postcode.required": "Enter the property postcode.",
+            "createUsername.username.pattern": "Enter a valid username.",
+            "loanAmount.min": "Enter a valid loan amount.",
+            "createSecurity.password.minlength": "Enter a valid password.",
+            "applicantDetails.dob.required": "Enter a valid date of birth.",
+            "contact.lastName.invalid": "Enter a valid last name.",
+            "createSecurity.mobileNumber.pattern": "Invalid mobile number: Enter a valid mobile number.",
+            "dashboardSearch.quoteReference.invalid": "Enter a Quote reference.",
+            "createPassword.match": "Password entries do not match.",
+            "createSecurity.createSecurityWord.maxlength": "Enter a valid security word.",
+            "createUsername.username.maxlength": "Enter a valid username.",
+            "contact.mobileNumber.pattern": "Invalid mobile number: Enter a valid mobile number.",
+            "postcode.UKPostcode": "Enter a valid postcode.",
+            "createSecurity.password.pattern": "Enter a valid password.",
+            "createSecurity.confirmPassword.required": "Confirm password.",
+            "contact.emailAddress.invalid": "Enter a valid email address.",
+            "confirmSecurityWord.invalid": "Enter a valid confirmation security word.",
+            "confirmMobileNumber.invalid": "Enter a valid confirmation mobile number.",
+            "createUsername.username.required": "Enter a valid username.",
+            "applicantDetails.age.out-of-range": "Age must be between %d and %d.",
+            "createSecurity.password.required": "Enter a valid password.",
+            "adviserSearch.fca.invalid": "Enter a valid FCA number. This must be 6 digits.",
+            "personalDataStatement": "We are not able to provide a quote without approval of our Personal Data Statement.",
+            "propertyValue.required": "Enter a property value.",
+            "dashboardSearch.quoteReference.required": "Enter a valid Quote reference.",
+            "propertyValue.number": "Enter a valid property value.",
+            "applicantDetails.dob.out-of-range": "Age must be between %d and %d.",
+            "loanAmount.max": "Enter a valid loan amount.",
+            "createSecurityWord.invalid": "Enter a valid security word.",
+            "applicantDetails.middleNames": "Enter a valid middle name. View the information icon for assistance.",
+            "dashboardSearch.adviser.invalid": "Enter a valid Adviser name. Name can contain hyphens and apostrophes.",
+            "createSecurity.confirmSecurityWord.required": "Confirm security word.",
+            "specifiedTerm.min": "Enter a valid term. View the information icon for assistance.",
+            "propertyValue.greaterThan": "Property value must exceed loan amount.",
+            "createSecurity.confirmPassword.equalTo": "Password entries do not match.",
+            "contact.firstName.invalid": "Enter a valid first name.",
+            "createSecurity.createSecurityWord.required": "Enter a valid security word.",
+            "createUsername.invalid": "Enter a valid username.",
+            "dashboardSearch.date.required": "Enter a valid date.",
+            "contact.lastName.required": "Enter a valid last name.",
+            "createMobileNumber.invalid": "Enter a valid mobile number.",
+            "contact.title.required": "Enter a valid title.",
+            "solicitorOption": "Select which solicitor will be used. View the information icon for assistance.",
+            "adviserSearch.company.required": "Enter a Company name.",
+            "brokerFeeType": "Select a advice fee option. View the information icon for assistance.",
+            "loanAmount.number": "Enter a valid loan amount.",
+            "createSecurity.password.maxlength": "Enter a valid password.",
+            "solicitorFee.required": "Enter a Solicitor fee or untick to use default value.",
+            "applicationFeeOption": "Select how the application fee is to be paid.",
+            "loanAmount.required": "Enter a loan amount",
+            "confirmPassword.invalid": "Enter a valid confirmation password.",
+            "solicitorFee.invalid": "Enter a valid solicitor fee.",
+            "propertyPurchased": "Select an option.View the information icon for assistance.",
+            "loanAmountType": "Select a loan amount option.",
+            "createSecurity.confirmSecurityWord.equalTo": "Security word entries do not match.",
+            "applicantDetails.gender": "Select a gender.",
+            "createSecurity.confirmMobileNumber.equalTo": "Mobile number entries do not match.",
+            "specifiedTerm.max": "Enter a valid term. View the information icon for assistance.",
+            "brokerFee.percentage": "Enter a valid advice fee percentage.",
+            "createSecurityWord.match": "Security word entries do not match.",
+            "createSecurity.createSecurityWord.pattern": "Enter a valid security word.",
+            "applicantDetails.title": "Select a title.",
+            "applicantDetails.dob.invalid": "Enter a valid date of birth.",
+            "createSecurity.createSecurityWord.minlength": "Enter a valid security word.",
+            "propertyValue.min": "Enter a valid property value.",
+            "brokerFee.number": "Enter a valid advice fee.",
+            "createUsername.username.minlength": "Enter a valid username.",
+            "createSecurity.confirmMobileNumber.required": "Confirm mobile number.",
+            "adviserSearch.adviser.required": "Enter an Adviser name.",
+            "contact.emailAddress.required": "Enter a valid email address.",
+            "applicantDetails.age.invalid": "Enter a valid age.",
+            "createUsername.taken": "This username already exists, please choose another.",
+            "dashboardSearch.date.invalid": "Enter a valid date.",
+            "applicantDetails.lastName.invalid": "Enter a valid last name. View the information icon for assistance.",
+            "adviserSearch.fca.required": "Enter a FCA number."
+        };
+        /*]]>*/
+    </script>
+    <link rel="stylesheet" href="components/pg.chocka-blocks/css/cb-style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400">
+</head>
+
+<body class="my-login-page">
+    <nav class="navbar sticky-top navbar-expand-md navbar-light" style="min-height: 125px; margin-bottom: 0px">
+        <div class="container">
+            <div class="d-flex w-100">
+                <a class="logo" id="hodgeLogo" href="dashboard.html"> </a>
+                <div id="navContactDetails">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">Contact our Adviser Support team:</td>
+                            </tr>
+                            <tr>
+                                <td class="telIconNav"><span class="fa fa-phone"></span></td>
+                                <td><span class="telNoNav">0800 731 4076</span> <span class="hoursNav">Mon-Fri 9am
+                                            to 5pm</span></td>
+                            </tr>
+                            <tr>
+                                <td class="emailIconNav"><span class="fa fa-envelope"></span></td>
+                                <td>
+                                    <a href="mailto:lendingsupport@hodge.co.uk">lendingsupport@hodge.co.uk</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+            </div>
+        </div>
+        <div class="navbar subnav sticky-top navbar-expand-md navbar-light">
+            <div class="container">
+                <div class="w-100">
+                    <div class="collapse navbar-collapse" id="navbarToggler">
+                        <ul id="main-nav" class="navbar-nav w-100">
+                            <li class="nav-item d-flex active">
+                                <a href="dashboard.html" id="homeLink" class="align-self-center"><span class="fa fa-home"> </span> Home</a>
+                            </li>
+                            <li class="nav-item dropdown d-flex">
+                                <a href="https://www.hodgeforintermediaries.co.uk/resources/" target="_blank" id="resourcesLink" class="align-self-center"><span class="fa fa-archive"> </span> Resources</a>
+                            </li>
+                            <li class="nav-item d-flex"><a id="companiesAndContacts" href="/companiescontacts-advisorsearch.html" class="align-self-center"><span class="fa fa-user"></span> Companies and Contacts</a></li>
+                            <li class="nav-item d-flex ml-md-auto">
+                                <a href="/login.html" id="logoutLink" class="align-self-center"><span class="fa fa-sign-out"> </span>
+                                        Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="h-70">
+        <div class="white-container">
+            <div class="container main-page-container pghelper-bs4-grid-parent-relative">
+                <div class="clear-fix-up-xxl"></div>
+                <div class="quote-details">
+                    <div class="form-row">
+
+                        <div class="col-md-6 d-flex">
+                            <h1 id="quotedetailsh1" class="mb-1">Case: <span>H700611</span> </h1>
+                            <h3><span class="badge badge-danger  mt-2 ml-3" style="font-size: 1em; background-color: #FFBF29">Refer</span></h3>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <button type="button" class="btn btn-labeled btn-success">
+                                        <span class="btn-label"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></span> View KFi
+                                    </button>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card p-3 mb-3" style="background-color:#ffcB05">
+                                <p class="mt-2">This DIP request will be referred to one of our underwriters for the following reasons:</p>
+                                <p><b>&#x2022; The property is valued at over £1,000,000</b><br/>
+                                    <p>Our current service levels for underwriting a request for a Decision in Principle are here.
+                                    </p>
+                                    <p>Please call us if you would like to speak to someone in our relationship team.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <div class="card p-3 text-center mb-3 bg-light">
+                                            <h2 style="font-size: 1.6em">Download application form</h2>
+                                            <p>To proceed to a full application form, please download the application form below, complete and&nbsp;submit back to us through the document upload facility.<br data-pg-id="77387"></p>
+                                            <a href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2017/12/HL-55-Application-For-A-Decision-In-Principle-v6-1-1.pdf" target="_blank" type="application/octet-stream" class="btn btn-default btn-lg rounded"> <i class="fa fa-arrow-down" aria-hidden="true" data-pg-id="77704"></i> Download application form <i class="fa fa-arrow-down" aria-hidden="true" data-pg-id="77705"></i></a>
+                                        </div>
+                                        <table class="table table-striped table-sm" style="table-layout: fixed">
+                                            <thead>
+                                                <tr>
+                                                    <th>Case Summary</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span>Applicant One</span> </td>
+                                                    <td><span>Mr. Tommy Tucker</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>Applicant Two</span> </td>
+                                                    <td><span>Mrs. Trish Tucker</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>Case status</span> </td>
+                                                    <td>Accepted</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>Product</span> </td>
+                                                    <td><span>55+ Mortgage 2 Year Fixed</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>Postcode</span></td>
+                                                    <td><span>RG11 1AA</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>Date created</span></td>
+                                                    <td><span>01/01/2019</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span>Date submitted</span> </td>
+                                                    <td><span>01/01/2019</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <style>
+                                        input.fileChooser,
+                                        .pg-node-id-1,
+                                        .pg-file-cs-170 {
+                                            padding: 4px 0 16px;
+                                            font-size: 1em;
+                                            font-family: "Hodge-Lato", sans-serif;
+                                            display: block;
+                                        }
+                                    </style>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Applicant section -->
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col col-xl-12">
+                                    <!-- Documents section -->
+                                    <div class="table-responsive">
+                                        <div class="card p-3 text-center mb-3 bg-light">
+                                            <h2 style="font-size: 1.6em">Upload supporting documents</h2>
+                                            <p>A list of standard verification documents required at <br>application is available <u>here</u><br></p>
+                                            <button id="openUpload" class="btn btn-default rounded btn-lg"> <i class="fa fa-arrow-up" aria-hidden="true"></i> Upload supporting documents <i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+                                        </div>
+                                        <table class="table table-striped table-sm" id="documents-table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-md-8">Document Name</th>
+                                                    <th class="col-xs-6 col-md-2">Type</th>
+                                                    <th class="col-xs-6 col-md-2">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="col-md-8"><span class="labels-mobile d-md-none">Document
+                                                            Name: </span><span class="file-name">H700611_DIP.pdf</span> </td>
+                                                    <td class="col-xs-6 col-md-2"><span class="labels-mobile d-md-none">Type: </span><span>DIP</span></td>
+                                                    <td class="col-xs-6 col-md-2">
+                                                        <a target="_blank" href="/advisor/document?id=1579">View</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-flex mb-3">
+                    <b><span></span></b>
+                </div>
+                <div class="row mb-3">
+                    <div class="d-flex w-100 clear-fix-up">
+                        <div class="col-lg-2 col-md-3 mr-auto">
+                            <a class="btn btn-default btn-block" href="dashboard.html" id="homeLink">
+                                    My Dashboard </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <a id="uploadFileBtn" class="btn btn-default btn-block hidden" href="beginApplication.html">
+                                    Re-Quote </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Documents info Modal -->
+                <!-- end of document modal -->
+            </div>
+            <footer>
+                <div class="container pghelper-bs4-grid-parent-relative">
+                    <div class="d-md-flex justify-content-between bd-highlight mb-3">
+                        <div class="w-100">
+                            <p class="sub-text slate" id="disclaimerText">This site is intended for professional intermediaries only and has not been approved for use with consumers. </p>
+                            <a class="small-prints" id="cookieLink" target="_blank" href="https://www.hodgeforintermediaries.co.uk/cookie-policy/">Cookies
+                                    Policy</a> |
+                            <a class="small-prints" target="_blank" id="privacyLink" href="https://www.hodgeforintermediaries.co.uk/privacy-policy/">Privacy
+                                    Policy</a>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <hr>
+                        <div class="col-md-12 mb-3">
+                            <a href="/dashboard.html" id="footerLogoLink" class="logo--white"> </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="small-prints" id="footerSmallPrint">Hodge is a trading name of Julian Hodge Bank Limited which is registered in England and Wales (No. 743437) and Hodge Life Assurance Company Limited which is registered in England and Wales (No. 837457). Both companies are authorised
+                                by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. Both companies are registered in England and Wales at One Central Square, Cardiff, CF10 1FS.</p>
+                            <p class="small-prints">© Copyright Hodge 2018</p>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="social-icons icon-circle icon-zoom list-unstyled list-inline pull-right">
+                                <li>
+                                    <a id="twitterIcon" target="_blank" href="https://twitter.com/HodgeLifetime"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a id="youTubeIcon" target="_blank" href="https://www.youtube.com/channel/UC0PN7BOjxp2Vt8wFbcoIXEA"><i class="fa fa-youtube"></i></a>
+                                </li>
+                                <li>
+                                    <a id="linkedInIcon" target="_blank" href="https://www.linkedin.com/company/1074291/"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
+                <form data-bind="submit: doSomething">
+                    <div class="modal-dialog">
+                        <div class="modal-content p-2">
+                            <div class="modal-header p-2">
+                                <h3 class="m-0">Upload new document</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                            </div>
+                            <div class="modal-body" id="modal-body">
+                                <div id="upload m-3 row">
+                                    <div class="col p-2 mt-2">
+                                        <div class="bg-light p-2" style="border: dashed 1px grey">
+                                            <div class=" input-group input-group-sm p-0 ">
+                                                <input type="file" id="files" name="files[]" multiple data-bind=" event:{change: fileSelect}" />
+                                                <output id="list"></output>
+                                                <!-- ko foreach: files-->
+                                                <div class="d-flex w-100 pb-2 align-items-center">
+                                                    <i class="fa fa-file fa-lg mr-2"></i> <span data-bind="text: name" class="w-100 bg-light"></span>
+                                                </div>
+                                                <!-- /ko -->
+                                            </div>
+                                        </div>
+
+                                        <div class="fileupload-buttonbar ">
+                                            <div class="d-flex">
+                                                <button type="submit " class="btn btn-success start "> <i class="fa fa-arrow-up"></i><span> Start upload</span>
+                    
+                                                </button>
+                                                <button type="button" class="btn btn-danger clear ml-auto mr-1" data-bind="click: clearFiles"> <i class="fa fa-trash"></i><span> Clear</span>
+                    
+                                                </button>
+                                                <button type="button" class="btn btn-danger cancel" data-bind="click: cancelUpload"> <i class="fa fa-close"></i><span> Cancel</span>
+                    
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- The table listing the files available for upload/download -->
+                                        <!--<table class="table table-striped ">
+                                            <tbody class="files " data-toggle="modal-gallery " data-target="#modal-gallery "></tbody>
+                                        </table>-->
+                                        <ol class="files upload-files-list "></ol>
+                                        <!--files go here-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <style>
+                input.fileChooser,
+                .pg-node-id-1,
+                .pg-file-cs-170 {
+                    padding: 4px 0 16px;
+                    font-size: 1em;
+                    font-family: "Hodge-Lato", sans-serif;
+                    display: block;
+                }
+                
+                .cb-content9 .content.one,
+                .pg-node-id-1360 {
+                    background-color: #fbfbfb;
+                    background-color: #fbfbfb;
+                    border: solid 1px #f2f2f2;
+                }
+                
+                #uploadModal {
+                    min-width: 700px;
+                }
+                
+                #abc.custom-file-label {
+                    height: 40px;
+                    padding-top: 8px !important;
+                    padding-bottom: 0;
+                }
+                
+                #abc.custom-file-label::after {
+                    height: 38px;
+                    padding-top: 8px !important;
+                    padding-bottom: 0;
+                    background-color: #223b47;
+                    color: white
+                }
+                
+                .upload-file .start {
+                    display: none;
+                }
+                
+                ol.upload-files-list {
+                    /*border: 1px solid #b9b9b9;*/
+                    margin: 0;
+                    padding: 0 10px 10px 10px;
+                    border-left: none;
+                    border-right: none;
+                    overflow: hidden;
+                }
+                
+                ol.upload-files-list .upload-file:last-child {
+                    border-bottom: 1px solid #ddd;
+                }
+                
+                ol.upload-files-list .upload-file.template-download .error-col {
+                    float: right;
+                }
+                
+                ol.upload-files-list .upload-file.template-upload .error-col {
+                    float: left;
+                }
+                
+                ol.upload-files-list .upload-file.template-upload .filesize-col {
+                    float: left;
+                    padding-right: 5px;
+                    padding-left: 5px;
+                    width: 80px;
+                }
+                
+                ol.upload-files-list .upload-file {
+                    list-style: none;
+                    position: relative;
+                    margin: 0;
+                    height: 35px;
+                    line-height: 35px;
+                    border-top: 1px solid #ddd;
+                    border-left: 1px solid #ddd;
+                    border-right: 1px solid #ddd;
+                    vertical-align: bottom;
+                }
+                
+                ol.upload-files-list .upload-file .upload-file-info {
+                    vertical-align: baseline;
+                    border-collapse: collapse;
+                    /*width: 100%;*/
+                    height: 35px;
+                    position: absolute;
+                    top: 0;
+                    left: 10px;
+                    right: 10px;
+                }
+                
+                ol.upload-files-list .upload-file .upload-progress-bar {
+                    height: 33px;
+                    padding: 0;
+                    margin: 0;
+                }
+                
+                .upload-file.complete .upload-progress-bar {
+                    background-color: #ebffd9;
+                }
+                
+                .upload-file.error .upload-progress-bar {
+                    background-color: #FD9F9F;
+                }
+                
+                .upload-file .upload-progress-bar {
+                    border-radius: 0;
+                    background-color: #e9f4ff;
+                }
+                
+                .upload-files-list .upload-file .upload-file-info .filename-col {
+                    float: left;
+                    width: 310px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                
+                .upload-files-list .upload-file .upload-file-info div {
+                    display: block;
+                }
+                
+                .upload-files-list .upload-file .upload-file-info .status-col {
+                    float: right;
+                }
+                
+                .upload-files-list .upload-file .upload-file-info .actions-col {
+                    float: right;
+                }
+                
+                .field-validation-error {
+                    color: red;
+                }
+                
+                .fileupload-buttonbar {
+                    padding: 10px 0 0;
+                }
+                
+                .modal-content {
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                }
+                
+                .modal-body {
+                    padding: 0;
+                }
+                
+                .modal-content,
+                .btn {
+                    border-radius: 0;
+                }
+                
+                .modal-backdrop {
+                    background-color: #fff;
+                }
+                
+                .modal-footer {
+                    margin-top: 0 !important;
+                }
+                
+                .modal-vertical-centered {
+                    transform: translate(0, 50%) !important;
+                    -ms-transform: translate(0, 50%) !important;
+                    /* IE 9 */
+                    -webkit-transform: translate(0, 50%) !important;
+                    /* Safari and Chrome */
+                }
+                
+                #upload {
+                    font-family: 'Aleo', sans-serif;
+                    /*background-color: #373a3d;
+background-image: -webkit-linear-gradient(top, #373a3d, #313437);
+background-image: -moz-linear-gradient(top, #373a3d, #313437);
+background-image: linear-gradient(top, #373a3d, #313437);
+/*width: 250px;*/
+                    /*padding: 30px;*/
+                    /*border-radius: 3px;*/
+                    /*margin: 200px auto 100px;*/
+                    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
+                    */
+                }
+                
+                #drop {
+                    /*background-color: #2E3134;*/
+                    padding: 10px 10px 0px 10px;
+                    /*margin-bottom: 30px;*/
+                    /*border: 20px solid rgba(0, 0, 0, 0);*/
+                    /*border-radius: 3px;*/
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #7f858a;
+                }
+                
+                #drop a {
+                    background-color: #007a96;
+                    padding: 12px 26px;
+                    color: #fff;
+                    font-size: 14px;
+                    border-radius: 2px;
+                    cursor: pointer;
+                    display: block;
+                    /*margin-top: 12px;*/
+                    line-height: 1;
+                }
+                
+                #drop a:hover {
+                    background-color: #0986a3;
+                }
+                
+                #drop input {
+                    display: none;
+                }
+                
+                .modal {
+                    background: rgba(0, 0, 0, 0.5);
+                }
+            </style>
+            <!-- <script src="/js/pages/quoteDetails.js "></script> -->
+            <script>
+                var brokerFee = 33.00;
+                var brokerFeeType = "FIXED_FEE ";
+                var interestRate = 0.04540;
+                var loanToValueRatio = 0.14300;
+                var annualPercentageCharge = 0.04707;
+                var postcode = "cf11 0aq ";
+                var loanterm = 19.0;
+                var loanAmountType = null;
+                var apc = "YES ";
+                var prodFeeType = "ADD_TO_LOAN ";
+                var applicantDetails = [{
+                    "id ": 794,
+                    "title ": "Mr ",
+                    "firstName ": "sdfsdf ",
+                    "middleNames ": " ",
+                    "lastName ": "sdfsdf ",
+                    "gender ": "MALE ",
+                    "age ": 66,
+                    "dateOfBirth ": null,
+                    "isMainApplicant ": true
+                }];
+
+                var files = ko.observableArray([]);
+                var fileSelect = function(element, event) {
+                    var files = event.target.files; // FileList object
+
+                    // Loop through the FileList and render image files as thumbnails.
+                    for (var i = 0, f; f = files[i]; i++) {
+
+                        var reader = new FileReader();
+
+                        // Closure to capture the file information.
+                        reader.onload = (function(theFile) {
+                            return function(e) {
+                                self.files.push(new FileModel(escape(theFile.name), e.target.result));
+                            };
+                        })(f);
+                        // Read in the image file as a data URL.
+                        reader.readAsDataURL(f);
+                    }
+                };
+                var FileModel = function(name, src) {
+                    var self = this;
+                    this.name = name;
+                    this.src = src;
+                };
+
+                var doSomething = function(data, e) {
+                    // ... now do something
+                    $.ajax("http://localhost:1337/addfiles", {
+                        type: "post",
+                        contentType: "application/json",
+                        success: function(result) {
+                            alert(result)
+                        }
+                    });
+                }
+                var clearFiles = function(data, e) {
+                    // ... now do something
+                    var $el = $('#files');
+                    $el.wrap('<form>').closest('form').get(0).reset();
+                    $el.unwrap();
+                    files([])
+                }
+                var cancelUpload = function(data, e) {
+                    // ... now do something
+                    var $el = $('#files');
+                    $el.wrap('<form>').closest('form').get(0).reset();
+                    $el.unwrap();
+                    files([]);
+                    $('#upload ol').empty();
+                    $('#uploadModal').modal('hide');
+
+                }
+                var requestorUsername = null;
+                ko.applyBindings();
+                $(function() {
+                    var ol = $('#upload ol');
+                    $('body').on('click', '#openUpload', function(e) {
+                        e.preventDefault();
+                        $('#upload ol').empty();
+                        $('#uploadModal').modal('show');
+                    });
+                });
+            </script>
+</body>
+
+</html>

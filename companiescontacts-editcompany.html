@@ -1,0 +1,456 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    <title>BROKER PORTAL</title>
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-4.1.3/bootstrap.min.css">
+    <script src="vendor/js/jquery-3.3.1/jquery-3.3.1.js"></script>
+    <script src="js/jquery.sessionTimeout.js"></script>
+    <script src="vendor/js/bootstrap-4.1.3/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome-5.7.2/all.css">
+    <script src="vendor/js/jquery.bootstrap-responsive-tabs.min.js"></script>
+    <link rel="stylesheet" href="vendor/css/bootstrap-css-tabs.css">
+    <!-- date picker libraries -->
+    <script src="vendor/js/datepicker.min.js"></script>
+
+    <script src="vendor/js/jquery-cookie-1.4.1/jquery.cookie.min.js"></script>
+    <script src="vendor/js/knockout-3.4.2/knockout.min.js"></script>
+    <script src="vendor/js/knockout-mapping-2.4.1/knockout.mapping.min.js"></script>
+    <script src="vendor/js/jquery-mask-1.14.15/jquery.mask.js"></script>
+    <script src="vendor/js/modernizr-2.8.3/modernizr.js"></script>
+    <!-- Tooltip -->
+    <script src="js/tooltip.js"></script>
+    <!-- https://bootstrap-datepicker.readthedocs.io -->
+    <link rel="stylesheet" href="vendor/css/datepicker.min.css">
+    <link rel="stylesheet" href="css/broker-portal.css">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="32x32">
+    <link rel="icon" href="https://www.hodgeforintermediaries.co.uk/wp-content/uploads/2018/01/favicon.png" sizes="192x192">
+    <!-- Load Validation fetchMessageProperties into JavaScript -->
+    <script>
+        /*<![CDATA[*/
+        window.messages = {
+            "applicantDetails.age.required": "Enter a valid age.",
+            "adviserSearch.company.invalid": "Enter a valid Company name.",
+            "dashboardSearch.customer.invalid": "Enter a valid Applicant name. Name can contain hyphens and apostrophes.",
+            "contact.firstName.required": "Enter a valid first name.",
+            "applicantDetails.firstName.invalid": "Enter a valid first name. View the information icon for assistance.",
+            "createPassword.invalid": "Enter a valid password.",
+            "adviserSearch.adviser.invalid": "Enter a valid Adviser name. Name can contain hyphens and apostrophes.",
+            "createMobileNumber.match": "Mobile number entries do not match.",
+            "dashboardSearch.customer.required": "Enter an Applicant name.",
+            "propertyValue.max": "Enter a valid property value.",
+            "contact.mobileNumber.required": "Enter a valid mobile number.",
+            "applicantDetails.lastName.required": "Enter applicant's last name.",
+            "brokerFee.required": "Enter an advice fee. View the information icon for assistance.",
+            "dashboardSearch.adviser.required": "Enter an Adviser name.",
+            "applicantDetails.firstName.required": "Enter applicant's first name.",
+            "specifiedTerm.number": "Enter a valid term. View the information icon for assistance.",
+            "acceptablePropertyCriteria": "Select whether the property meets Hodge`s acceptable property criteria.",
+            "createSecurity.mobileNumber.required": "Enter a mobile number.",
+            "postcode.required": "Enter the property postcode.",
+            "createUsername.username.pattern": "Enter a valid username.",
+            "loanAmount.min": "Enter a valid loan amount.",
+            "createSecurity.password.minlength": "Enter a valid password.",
+            "applicantDetails.dob.required": "Enter a valid date of birth.",
+            "contact.lastName.invalid": "Enter a valid last name.",
+            "createSecurity.mobileNumber.pattern": "Invalid mobile number: Enter a valid mobile number.",
+            "dashboardSearch.quoteReference.invalid": "Enter a Quote reference.",
+            "createPassword.match": "Password entries do not match.",
+            "createSecurity.createSecurityWord.maxlength": "Enter a valid security word.",
+            "createUsername.username.maxlength": "Enter a valid username.",
+            "contact.mobileNumber.pattern": "Invalid mobile number: Enter a valid mobile number.",
+            "postcode.UKPostcode": "Enter a valid postcode.",
+            "createSecurity.password.pattern": "Enter a valid password.",
+            "createSecurity.confirmPassword.required": "Confirm password.",
+            "contact.emailAddress.invalid": "Enter a valid email address.",
+            "confirmSecurityWord.invalid": "Enter a valid confirmation security word.",
+            "confirmMobileNumber.invalid": "Enter a valid confirmation mobile number.",
+            "createUsername.username.required": "Enter a valid username.",
+            "applicantDetails.age.out-of-range": "Age must be between %d and %d.",
+            "createSecurity.password.required": "Enter a valid password.",
+            "adviserSearch.fca.invalid": "Enter a valid FCA number. This must be 6 digits.",
+            "personalDataStatement": "We are not able to provide a quote without approval of our Personal Data Statement.",
+            "propertyValue.required": "Enter a property value.",
+            "dashboardSearch.quoteReference.required": "Enter a valid Quote reference.",
+            "propertyValue.number": "Enter a valid property value.",
+            "applicantDetails.dob.out-of-range": "Age must be between %d and %d.",
+            "loanAmount.max": "Enter a valid loan amount.",
+            "createSecurityWord.invalid": "Enter a valid security word.",
+            "applicantDetails.middleNames": "Enter a valid middle name. View the information icon for assistance.",
+            "dashboardSearch.adviser.invalid": "Enter a valid Adviser name. Name can contain hyphens and apostrophes.",
+            "createSecurity.confirmSecurityWord.required": "Confirm security word.",
+            "specifiedTerm.min": "Enter a valid term. View the information icon for assistance.",
+            "propertyValue.greaterThan": "Property value must exceed loan amount.",
+            "createSecurity.confirmPassword.equalTo": "Password entries do not match.",
+            "contact.firstName.invalid": "Enter a valid first name.",
+            "createSecurity.createSecurityWord.required": "Enter a valid security word.",
+            "createUsername.invalid": "Enter a valid username.",
+            "dashboardSearch.date.required": "Enter a valid date.",
+            "contact.lastName.required": "Enter a valid last name.",
+            "createMobileNumber.invalid": "Enter a valid mobile number.",
+            "contact.title.required": "Enter a valid title.",
+            "solicitorOption": "Select which solicitor will be used. View the information icon for assistance.",
+            "adviserSearch.company.required": "Enter a Company name.",
+            "brokerFeeType": "Select a advice fee option. View the information icon for assistance.",
+            "loanAmount.number": "Enter a valid loan amount.",
+            "createSecurity.password.maxlength": "Enter a valid password.",
+            "solicitorFee.required": "Enter a Solicitor fee or untick to use default value.",
+            "applicationFeeOption": "Select how the application fee is to be paid.",
+            "loanAmount.required": "Enter a loan amount",
+            "confirmPassword.invalid": "Enter a valid confirmation password.",
+            "solicitorFee.invalid": "Enter a valid solicitor fee.",
+            "propertyPurchased": "Select an option.View the information icon for assistance.",
+            "loanAmountType": "Select a loan amount option.",
+            "createSecurity.confirmSecurityWord.equalTo": "Security word entries do not match.",
+            "applicantDetails.gender": "Select a gender.",
+            "createSecurity.confirmMobileNumber.equalTo": "Mobile number entries do not match.",
+            "specifiedTerm.max": "Enter a valid term. View the information icon for assistance.",
+            "brokerFee.percentage": "Enter a valid advice fee percentage.",
+            "createSecurityWord.match": "Security word entries do not match.",
+            "createSecurity.createSecurityWord.pattern": "Enter a valid security word.",
+            "applicantDetails.title": "Select a title.",
+            "applicantDetails.dob.invalid": "Enter a valid date of birth.",
+            "createSecurity.createSecurityWord.minlength": "Enter a valid security word.",
+            "propertyValue.min": "Enter a valid property value.",
+            "brokerFee.number": "Enter a valid advice fee.",
+            "createUsername.username.minlength": "Enter a valid username.",
+            "createSecurity.confirmMobileNumber.required": "Confirm mobile number.",
+            "adviserSearch.adviser.required": "Enter an Adviser name.",
+            "contact.emailAddress.required": "Enter a valid email address.",
+            "applicantDetails.age.invalid": "Enter a valid age.",
+            "createUsername.taken": "This username already exists, please choose another.",
+            "dashboardSearch.date.invalid": "Enter a valid date.",
+            "applicantDetails.lastName.invalid": "Enter a valid last name. View the information icon for assistance.",
+            "adviserSearch.fca.required": "Enter a FCA number."
+        };
+        /*]]>*/
+    </script>
+</head>
+
+<body class="my-login-page">
+    <nav class="navbar sticky-top navbar-expand-md navbar-light" style="min-height: 125px; margin-bottom: 0px">
+        <div class="container">
+            <div class="d-flex w-100">
+                <a class="logo" id="hodgeLogo" href="dashboard.html"> </a>
+                <div id="navContactDetails">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">Contact our Adviser Support team:</td>
+                            </tr>
+                            <tr>
+                                <td class="telIconNav"><span class="fa fa-phone"></span></td>
+                                <td><span class="telNoNav">0800 731 4076</span> <span class="hoursNav">Mon-Fri 9am to
+                                        5pm</span></td>
+                            </tr>
+                            <tr>
+                                <td class="emailIconNav"><span class="fa fa-envelope"></span></td>
+                                <td>
+                                    <a href="mailto:lendingsupport@hodge.co.uk">lendingsupport@hodge.co.uk</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+        <div class="navbar subnav sticky-top navbar-expand-md navbar-light">
+            <div class="container">
+                <div class="w-100">
+                    <div class="collapse navbar-collapse" id="navbarToggler">
+                        <ul id="main-nav" class="navbar-nav w-100">
+                            <li class="nav-item d-flex">
+                                <a href="dashboard.html" id="homeLink" class="align-self-center"><span class="fa fa-home">
+                                    </span> Home</a>
+                            </li>
+                            <li class="nav-item dropdown d-flex">
+                                <a href="https://www.hodgeforintermediaries.co.uk/resources/" target="_blank" id="resourcesLink" class="align-self-center"><span class="fa fa-archive"> </span> Resources</a>
+                            </li>
+                            <li class="nav-item d-flex active"><a id="companiesAndContacts" href="/companiescontacts-advisorsearch.html" class="align-self-center"><span class="fa fa-user"></span> Companies and Contacts</a></li>
+
+                            <li class="nav-item d-flex ml-md-auto"> <a href="/login.html" id="logoutLink" class="align-self-center"><span class="fa fa-sign-out">
+                                    </span>
+                                    Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="h-70">
+        <form id="searchForm" class="navbar-form navbar-right" role="search" action="/companiescontacts-editcompany.html" method="POST" novalidate="novalidate">
+            <div class="white-container">
+                <div class="container main-page-container">
+                    <div class="clear-fix-up-xxl"></div>
+                    <div>
+                        <!-- Page Header -->
+                        <h1 id="companyDetailsTitle">Companies and Contacts | Edit Company</h1>
+                        <!-- view and edit adviser record -->
+                        <div class="row-flex clear-fix-up" id="editCompany">
+                            <div class="form-row clear-fix-up-xxl" id="companies-contacts-subnav">
+                                <div class="col-md-12">
+                                    <div class="btn-group-lg btn-group-toggle form-row">
+                                        <a class="btn btn-primary btn-lg col m-1" id="adviserSearchLink" href="/companiescontacts-advisorsearch.html">
+                                            <h1> <span class="fa fa-user-shield w-100"></span> </h1>
+                                            <input type="radio" name="options" id="option1" autocomplete="off">Adviser Search
+                                        </a>
+                                        <a class="btn btn-primary btn-lg col m-1 active" id="companySearchLink" href="/companiescontacts-companysearch.html">
+                                            <h1> <span class="fa fa-building w-100"></span> </h1>
+                                            <input type="radio" name="options" id="option2" autocomplete="off"> Company Search
+                                        </a>
+                                        <a class="btn btn-primary btn-lg col m-1" id="createCompanyLink" href="/companiescontacts-createcompany.html">
+                                            <h1> <span class="fa fa-book w-100"></span> </h1>
+                                            <input type="radio" name="options" id="option3" autocomplete="off"> Create Company
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Page Sub Header -->
+                            <h3><span class="sessioncamexclude">Equity Release Supermarket</span></h3>
+                            <form id="editCompanyDetailsForm" name="editCompanyDetailsForm" action="/companiescontacts-companydetails.html" autocomplete="off" onsubmit="setFormSubmitting()" novalidate="novalidate">
+                                <input type="hidden" name="_csrf" value="05666445-43ac-4428-bb01-18420914eb4d">
+
+                                <div class="box mt-0">
+                                    <div class="box-content">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="companyName" id="companyNameLabel">Company name</label>
+                                                        <input class="form-control sessioncamexclude" id="companyName" type="text" value="Equity Release Supermarket">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="fcaNumber" id="fcaNumberLabel">FCA number</label>
+                                                        <input class="form-control sessioncamexclude" id="fcaNumber" type="text" value="111111">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="mobileNumber" id="mobileNumberLabel">Telephone number</label>
+                                                        <input class="form-control sessioncamexclude" id="mobileNumber" type="text" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="emailAddress" id="emailAddressLabel">Email address</label>
+                                                        <input class="form-control sessioncamexclude" id="emailAddress" type="text" value="Ashvini.Rajput@hodge.co.uk">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="firmType" id="firmTypeLabel">Company type</label>
+                                                        <input class="form-control sessioncamexclude" id="firmType" type="text" value="APPOINTED_REPRESENTATIVE" disabled="disabled">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+
+                                                        <label for="buildingNumber" id="buildingNumberLabel">Building number</label>
+                                                        <input class="form-control sessioncamexclude" id="buildingNumber" type="text" value="22">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="buildingName" id="buildingNameLabel">Building name</label>
+                                                        <input class="form-control sessioncamexclude" id="buildingName" type="text" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="street" id="streetLabel">Street</label>
+                                                        <input class="form-control sessioncamexclude" id="street" type="text" value="Acacia Avenue">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="district" id="districtLabel">District</label>
+                                                        <input class="form-control sessioncamexclude" id="district" type="text" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="city" id="cityLabel">City</label>
+                                                        <input class="form-control sessioncamexclude" id="city" type="text" value="Cardiff">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="county" id="countyLabel">County</label>
+                                                        <input class="form-control sessioncamexclude" id="county" type="text" value="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="postcode" id="postcodeLabel">Postcode</label>
+                                                        <input class="form-control sessioncamexclude" id="postcode" type="text" value="CF1 1NG">
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="telNumber" id="mobNumberLabel">Trading status<span class="ao-tooltip"></span></label>
+                                                        <select name="contact.title" class="form-control sessioncamexclude" id="title" required="required">
+                                                                                                        <option value="">Select</option>
+                                                                                                        <option value="" selected>Pending approval</option>
+                                                                                                            <option value="Mr" selected>Approved</option>
+                                                                                                            <option value="Mrs">Decline</option>
+                                                                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12">
+                                                        <label for="status" id="statusLabel">Account status</label>
+                                                        <select name="contact.title" class="form-control sessioncamexclude" id="title" required="required">
+                                                                        <option value="">Select</option>
+                                                                        <option value="Active" selected>Active</option>
+                                                                        <option value="Mrs">Inactive</option>
+                                                                    </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col">
+                                                        <label for="emailAddress" id="emailAddressLabel">Notes<span class="ao-tooltip"></span></label>
+                                                        <textarea class="form-control" rows="17" id="comment"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row justify-content-between clear-fix-up">
+                                    <div class="col-md-6 mb-3 justify-content-between">
+                                        <a id="createNewAdviserBtn" class="btn btn-default" href="/companiescontacts-createadvisor.html">
+                                            Create new Adviser
+                                        </a>
+                                        <a id="createNewTradingBusinessBtn" class="btn btn-default" href="/admin/create-trading-business">
+                                            Create new Trading Name
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-2 col-md-3 mb-3">
+                                        <a id="editBtn" class="btn btn-default btn-block" type="button" name="action" href="/companiescontacts-companydetails.html" value="quote" tabindex="0">
+                                            Save</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- Google Tag Manager (noscript) -->
+            <noscript>
+                <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WR3CZHV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            </noscript>
+            <!-- End Google Tag Manager (noscript) -->
+        </form>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="d-md-flex  justify-content-between bd-highlight mb-3">
+                <div class="w-100">
+                    <p class="sub-text slate" id="disclaimerText">This site is intended for professional intermediaries only and has not been approved for use with consumers. </p>
+                    <a class="small-prints" id="cookieLink" target="_blank" href="https://www.hodgeforintermediaries.co.uk/cookie-policy/">Cookies
+                        Policy</a> |
+                    <a class="small-prints" target="_blank" id="privacyLink" href="https://www.hodgeforintermediaries.co.uk/privacy-policy/">Privacy
+                        Policy</a>
+                </div>
+                <div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <hr>
+                <div class="col-md-12 mb-3">
+                    <a href="/dashboard.html" id="footerLogoLink" class="logo--white"> </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="small-prints" id="footerSmallPrint">Hodge is a trading name of Julian Hodge Bank Limited which is registered in England and Wales (No. 743437) and Hodge Life Assurance Company Limited which is registered in England and Wales (No. 837457). Both companies are authorised
+                        by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. Both companies are registered in England and Wales at One Central Square, Cardiff, CF10 1FS.
+                    </p>
+                    <p class="small-prints">© Copyright Hodge 2018</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="social-icons icon-circle icon-zoom list-unstyled list-inline pull-right">
+                        <li>
+                            <a id="twitterIcon" target="_blank" href="https://twitter.com/HodgeLifetime"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a id="youTubeIcon" target="_blank" href="https://www.youtube.com/channel/UC0PN7BOjxp2Vt8wFbcoIXEA"><i
+                                    class="fa fa-youtube"></i></a>
+                        </li>
+                        <li>
+                            <a id="linkedInIcon" target="_blank" href="https://www.linkedin.com/company/1074291/"><i
+                                    class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <style>
+        #companies-contacts-subnav a.btn.btn-primary {
+            height: 80x;
+            padding-top: 10px;
+            vertical-align: bottom;
+            font-family: "Hodge-Aleo", "Times", "Times New Roman", serif;
+            font-size: 1.3em;
+            color: white !important;
+            padding-top: 8px;
+            font-weight: bold;
+        }
+        
+        #companies-contacts-subnav a span {
+            color: white !important
+        }
+        
+        #companies-contacts-subnav a.active span {
+            color: #223b47 !important
+        }
+        
+        #companies-contacts-subnav a.btn.btn-primary.active {
+            background-color: #ffcB05 !important;
+            color: #223b47 !important;
+            height: 80x;
+            vertical-align: bottom;
+        }
+        
+        #companies-contacts-subnav a.btn.btn-primary:hover {
+            color: #223b47 !important
+        }
+        
+        #companies-contacts-subnav a.btn.btn-primary:hover span {
+            color: #223b47 !important
+        }
+        
+        .visually-hidden {
+            overflow: hidden;
+            position: absolute;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+            padding: 0;
+            border: 0;
+        }
+    </style>
+</body>
+
+</html>
